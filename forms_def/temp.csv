@@ -1,0 +1,141 @@
+20350;checkbox_base_100;keine;
+    ;info_100;@blank@<b>oder</b><hr>;;
+        20360;checkbox_base_30;Schilddrüsenerkrankung;
+        20370;checkbox_base_30;Diabetes mellitus;
+        20380;checkbox_base_30;KHK;
+        20390;checkbox_base_30;chronische Lungenerkrankung;
+        20400;checkbox_base_30;chronische Lebererkrankung;
+        20410;checkbox_base_30;rheumatische Erkrankung;
+        20420;checkbox_base_30;Multiple Sklerose;
+        20430;checkbox_base_30;Psoriasis;
+        20440;checkbox_base_30;Hypertonie;
+        20450;checkbox_base_30;Lungenentzündung (Pneumonie);
+        20460;checkbox_base_30;Asthma bronchiale;
+        20470;checkbox_base_30;Z.n. Venenthrombose;
+        20480;checkbox_base_30;psychische Erkrankung;
+        20490;checkbox_base_30;Entzündungen der Nase und des Rachens (Nasopharyngitis);
+        ;start_row;;
+            20500;checkbox_base_30;andere Infektion(en);
+            20510;text_0_60;;
+            20520;checkbox_base_30;andere Erkrankung(en);
+            20530;text_0_60;;
+        ;end_row;;
+
+
+;start_fieldset;EQ-5D;
+    116700;select;<table class='td_num'><tr><td>1.</td><td>Hatten Soe/td></tr></table>;Ich habe keine Probleme herumzugehen|Ich habe leichte Probleme herumzugehen|Ich habe mäßige Probleme herumzugehen|Ich habe große Probleme herumzugehen|Ich bin nicht in der Lage herumzugehen;required
+    116800;select;<table class='td_num'><tr><td>2.</td><td>Für sich selbst sorgen</td></tr></table>;Ich habe keine Probleme, mich selbst zu waschen oder anzuziehen|Ich habe leichte Probleme, mich selbst zu waschen oder anzuziehen|Ich habe mäßige Probleme, mich selbst zu waschen oder anzuziehen|Ich habe große Probleme, mich selbst zu waschen oder anzuziehen|Ich bin nicht in der Lage, mich selbst zu waschen oder anzuziehen;required
+    116900;select;<table class='td_num'><tr><td>3.</td><td>Alltägliche Tätigkeiten (z.B. Arbeit, Studium, Hausarbeit, Familien- oder Freizeitaktivitäten)</td></tr></table>;Ich habe keine Probleme, meinen alltäglichen Tätigkeiten nachzugehen|Ich habe leichte Probleme, meinen alltäglichen Tätigkeiten nachzugehen|Ich habe mäßige Probleme, meinen alltäglichen Tätigkeiten nachzugehen|Ich habe große Probleme, meinen alltäglichen Tätigkeiten nachzugehen|Ich bin nicht in der Lage, meinen alltäglichen Tätigkeiten nachzugehen;required
+    117000;select;<table class='td_num'><tr><td>4.</td><td>Schmerzen oder körperliche Beschwerden</td></tr></table>;Ich habe keine Schmerzen oder Beschwerden|Ich habe leichte Schmerzen oder Beschwerden|Ich habe mäßige Schmerzen oder Beschwerden|Ich habe starke Schmerzen oder Beschwerden|Ich habe extreme Schmerzen oder Beschwerden;required
+    117100;select;<table class='td_num'><tr><td>5.</td><td>Angst oder Niedergeschlagenheit</td></tr></table>;Ich bin nicht ängstlich oder deprimiert|Ich bin ein wenig ängstlich oder deprimiert|Ich bin mäßig ängstlich oder deprimiert|Ich bin sehr ängstlich oder deprimiert|Ich bin extrem ängstlich oder deprimiert;required
+    
+;stop_fieldset;;;
+
+
+;start_fieldset;Therapie;;
+    20920;checkbox_base_100;Momentan besteht keine Colitis ulcerosa - Therapie;
+    ;info_100;<hr>;
+    ;info_30_c_l;;
+    ;info_30_c_l;<strong><font style='color:red'>Bis zum</font> Dokumentationszeitpunkt</strong>;;
+    ;info_30_c_l;<strong><font style='color:red'>Ab dem</font> Dokumentationszeitpunkt</strong>;;
+    ;info_100;➥<strong>Orale Medikation</strong>;;
+    ;info_30;5-ASA oral < 3g;;
+    20930;checkbox_base_30_c_l;;
+    20940;checkbox_base_30_c_l;;
+    ;info_30;5-ASA oral ≥ 3g;;
+    20950;checkbox_base_30_c_l;;
+    20960;checkbox_base_30_c_l;;
+    ;info_30;Sulfasalazin oral;;
+    20970;checkbox_base_30_c_l;;
+    20980;checkbox_base_30_c_l;;
+    ;info_30;Probiotika;;
+    20990;checkbox_base_30_c_l;;
+    21000;checkbox_base_30_c_l;;
+    ;info_100;<hr>;;
+    ;info_100;➥<strong>Rektale Medikation</strong>;;
+    ;info_30;5-ASA rektal tgl.;;
+    21010;checkbox_base_30_c_l;;
+    21020;checkbox_base_30_c_l;;
+    ;info_30;5-ASA rektal in größeren Abständen;;
+    21030;checkbox_base_30_c_l;;
+    21040;checkbox_base_30_c_l;;
+    ;info_30;Budesonid rektal;;
+    21050;checkbox_base_30_c_l;;
+    21060;checkbox_base_30_c_l;;
+    ;info_30;Colifoam Schaum®;;
+    21070;checkbox_base_30_c_l;;
+    21080;checkbox_base_30_c_l;;
+    ;info_30;Andere rektale Therapie;
+    21090;checkbox_base_30_c_l;;
+    21100;checkbox_base_30_c_l;;
+    ;info_100;<hr>;;
+    ;info_100;➥<strong>Glukokortikoide</strong>;;
+    ;info_30;Budesonid oral;;
+    21110;checkbox_base_30_c_l;;
+    21120;checkbox_base_30_c_l;;
+    ;info_30;Kortikosteroide oral < 20 mg/tgl;;
+    21130;checkbox_base_30_c_l;;
+    21140;checkbox_base_30_c_l;;
+    ;info_30;Kortikosteroide oral ≥ 20 mg/tgl;;
+    21150;checkbox_base_30_c_l;;
+    21160;checkbox_base_30_c_l;;
+    ;info_30;Steroidabhängiger Verlauf;;
+    21170;checkbox_base_30_c_l;;
+    21180;checkbox_base_30_c_l;;
+    ;info_30;Steroidrefraktärer Verlauf;;
+    21190;checkbox_base_30_c_l;;
+    21200;checkbox_base_30_c_l;;
+    ;info_100;<hr>;;
+    ;info_100;➥<strong>Immunsuppressiva</strong>;;
+    ;info_30;Azathioprin;;
+    21210;checkbox_base_30_c_l;;
+    21220;checkbox_base_30_c_l;;
+    ;info_30;6-Mercaptopurin (6-MP);;
+    21230;checkbox_base_30_c_l;;
+    21240;checkbox_base_30_c_l;;
+    ;info_30;MTX;;
+    21250;checkbox_base_30_c_l;;
+    21260;checkbox_base_30_c_l;;
+    ;info_30;;;
+    21270;text;|anderes Immunsuppressivum;;
+    21280;checkbox_base_30_c_l;;
+    21290;checkbox_base_30_c_l;;
+    ;info_100;<hr>;;
+    ;info_100;➥<strong>„Small Molecules”</strong>;;
+    ;info_30;Tofacitinib (Xeljanz®);;
+    21320;checkbox_base_30_c_l;;
+    21330;checkbox_base_30_c_l;;
+    ;info_30;Filgotinib (Jyseleca®);;
+    21350;checkbox_base_30_c_l;;
+    21360;checkbox_base_30_c_l;;	
+    ;info_30;Ozanimod (Zeposia®);;
+    21380;checkbox_base_30_c_l;;
+    21390;checkbox_base_30_c_l;;
+    ;info_30;;;
+    21410;text;|andere Small Molecules;;
+    21420;checkbox_base_30_c_l;;
+    21430;checkbox_base_30_c_l;;
+        
+
+
+;stop_fieldset;;
+
+
+;start_fieldset;Medikamentenanamnese;;
+20770;select;Glukokortikoide seit der letzten Dokumentation eingenommen?<br><font style='font-size:13px@semikolon@color:gray'>(Außer jeweils vor der anti TNF-alpha Therapie als Anaphylaxie-Prophylaxe.)</font>;ja|nein|unbekannt;
+20780;select;Wenn ja, über welchen Zeitraum wurden Steroide eingenommen?;keine|< 25 % der Zeit|25 – 50 % der Zeit|50 – 75 % der Zeit|dauerhaft;
+20790;select;Chronischer Steroid Gebrauch ≥ 20 mg ≥ 6 Monate;ja|nein|unbekannt;
+20800;select;Neue Arzneimittelunverträglichkeiten?;ja|nein|unbekannt;;
+	;info_100;➥Wenn ja, welche:;;
+		20810;checkbox_base_30;Azathioprin;
+		20820;checkbox_base_30;5-ASA;
+		20830;checkbox_base_30;6-Mercaptopurin;
+		20840;checkbox_base_30;TNF-alpha AK;
+		20850;checkbox_base_30;Vedolizumab;
+		20860;checkbox_base_30;Golimumab;
+		20870;checkbox_base_30;Tofacitinib;
+		20880;checkbox_base_30;Filgotinib;
+		20890;checkbox_base_30;Ozanimod;
+		20900;checkbox_base_30;andere Unverträglichkeiten:;
+		20910;text_0_60;|welche;
+;stop_fieldset;; 

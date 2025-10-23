@@ -1,0 +1,83 @@
+id;type;name;options;required
+;start_hidden_row;;C
+    101;text;created;;
+    102;text;oldpid;;
+    97;text;Groesse;;
+    100;text;E;;
+    
+    10005020;text;;
+    33;text;patient_zuletzt_informiert;
+    
+;end_row;;
+
+
+199920;start_span_block;;
+
+99921;start_fieldset;Stammdaten;
+   91;text_1_col_30;Patienten-Nummer;;required
+    10003046;text_1_col_30;Zentrum/Abteilung;;
+    10003045;date_1_col_30;Dokumentationsstart;;
+    10003020;number_1_col_30;Alter bei Einschluss;18|110|1;required
+    96;select_1_col_30;Geschlecht;weiblich|männlich|divers;required
+    202101;select_1_col_30;Ethnische Zugehörigkeit;Europäisch/ Kaukasisch|Afrikanisch|Asiatisch|Hispanisch|Indigen|Nahost/ Nordafrikanisch|Gemischt/ Sonstige;
+    92;text_1_col_30;Studien-Nr. /Pseudonym;;required
+    99467;info_60;<strong><font style='color:red'>Achtung: Bitte kontaktieren Sie die Study Nurse zum Erhalt der Studien-Nr.: </font></strong><button id='study_nurse' class='aref_button_light'>Kontakt anzeigen</button> <button id='study_nurse_email' class='aref_button_light'>E-Mail schreiben</button>;
+;stop_fieldset;;
+
+199900;info_100;<span style='display: grid@,@ grid-template-columns: 1fr 1fr@,@ gap: 10px@,@ width: 100%@,@'><button id='ein_button' class='aref_button_light'>Einschlusskriterien ein-/ ausblenden</button> <button id='aus_button' class='aref_button_light'>Ausschlusskriterien ein-/ ausblenden</button></span>;;
+
+199922;start_fieldset;Einschlusskriterien;;
+    10003101;radio_cb;Alter ≥ 18 Jahre;;required
+    10003102;radio_cb;Innerhalb von 4 Wochen vorliegende vollständige Koloskopie, makroskopisch und histologisch mit Nachweis einer moderat aktiven Colitis ulcerosa  (unabhängig vom Befallsmuster);;required
+    10003103;radio_cb;MAYO-Score zwischen  ≥6 und ≤10;;required
+    10003104;radio_cb;Klinische Refraktärität gegenüber einer mindestens 4-wöchigen Therapie mit Mesalazin (> 2g/d) und/oder Kortikosteroiden (Prednison > 10mg/d, Budesonid >9mg/d;;required
+    10003105;radio_cb;Entscheidung des behandelnden Arztes zu einer Therapieeskalation mit „advanced“ Therapie;;required
+    10003106;radio_cb;Negative Stuhlkultur einschließlich C. difficile;;required
+    10003107;radio_cb;Negativer Nachweis von CMV (Histologie);;required
+    10003108;radio_cb;Patient hat die „Informationen für Patienten“ unterschrieben und erhalten;;required
+;stop_fieldset;;
+
+199923;start_fieldset;Ausschlusskriterien;
+    10003201;radio_cb;Appendektomie in der Anamnese;;required
+    10003202;radio_cb;Morbus Crohn;;required
+    10003203;radio_cb;Immunsuppression in der Anamnese bis 4 Wochen vor Studienbeginn oder laufend (außer Glukokortikosteroide);;required
+    10003204;radio_cb;Größere abdominelle Operationen, die eine einfache Appendektomie behindern oder ein Risiko darstellen;;required
+    10003205;radio_cb;Schwere (toxische) Colitis ulcerosa, die eine Notfallkolektomie wahrscheinlich machen;;required
+    10003206;radio_cb;Kontraindikationen für Vedolizumab (s. wiss. Informationen);;required
+    10003207;radio_cb;Dominant-symptomatische extraintestinale Manifestationen;;required
+    10003208;radio_cb;Schwere (behandlungsbedürftige) Komorbidität an Nieren, Leber, Lunge, Herz, oder anderen Organsystemen;;required
+    10003209;radio_cb;Aktive (behandlungsbedürftige) Krebserkrankung;;required
+    10003210;radio_cb;Schwangerschaft;;required
+    10003211;radio_cb;Fehlende oder nicht verstandene Einverständnis/Patienteninformation;;required
+;stop_fieldset;;
+
+99911;start_fieldset;Therapie;
+    10020001;checkbox_base_60;Konservativ einschließlich Vedolizumab;;
+    10003047;date_1_col_30;Erste Verabreichung von Vedolizumab;;
+    10020002;checkbox_base_60;Operativ / Appendektomie;;
+    10003048;date_1_col_30;Operationstermin;;
+    ;info_100;<center><u>Hinweis:</u> Die Therapie der letzten Woche bleibt, wenn gewünscht, unverändert bestehen</center>;;
+;stop_fieldset;;
+
+99912;start_fieldset;Demographie;
+    102600;text;Größe (in cm):;;required
+    102700;text;Gewicht (in kg):;;required
+    102705;text_span;@10@➥ BMI|Automatikfeld;;
+    102800;radio_cb;Raucher:;;required
+    102805;radio_cb;Ex-Raucher:;;required
+    ;start_block;Ja;102805;
+       ;start_row;;
+          102801;date_tc;@10@➥ Seit wann sind Sie Nichtraucher?;1960|this_year|true|false|Y(M)|de;required
+        ;end_row;;
+    ;stop_block;; 
+    20100;select;Aktuelle Lebenssituation:;Berentung|Schüler/ Student/ Ausbildung/ FSJ/FÖJ|Hausfrau/-mann/ Mutterschutz/ Elternzeit|in bezahlter Arbeit (Vollzeit)|in bezahlter Arbeit (Teilzeit)|erwerbslos|Frührente|keine Angabe;required
+    20111;select;Höchster allgemeinbildender Schulabschluss:;noch keinen Schulabschluss|Schule beendet ohne Schulabschluss|Realschulabschluss/ mittlere Reife (neu: mittlerer Schulabschluss/ MSA)|Haupt-/ Volksschulabschluss (neu: erster allgemeinbildender Schulabschluss/ ESA)|POS (Polytechnische Oberschule) bzw. 10. Klasse|Fachhochschulreife/ Fachoberschule|Abitur, allgemeine oder fachgebundene Hochschulreife|Anderen Schulabschluss (z.B. im Ausland erworben)|keine Angabe;required
+    102200;date_tc;Datum der Erstdiagnose|in Jahr (vierstellig);1960|this_year|true|false|Y(M)|de;required
+    102300;date_tc;Erste Symptome Ihrer Erkrankung?|in Jahr (vierstellig);1960|this_year|true|false|Y(M)|de;required    
+;stop_fieldset;;
+
+;stop_span_block;;
+
+99922;start_fieldset;;
+10003050;idonly_100;;;
+;stop_fieldset;;

@@ -1,0 +1,185 @@
+id;type;name;options;required
+
+;start_hidden_row;;
+90;text;pid;;
+91;text;Praxis-ID;;
+92;text;Cedur-Nr.;;
+93;text;VID;;
+94;text;Baseline;;
+95;text;Diagnose;;
+96;text;geschlecht;;
+100;text;Error;;
+10005020;text;Visite;;
+10005021;text;Woche;;
+;end_row;;
+
+
+;start_fieldset;Untersuchung;;
+    20115;radio_cb;<strong>Klinische Vorstellung durchgeführt?</strong>:;;required
+    20560;select;Selbstwahrnehmung des Patienten zum Allgemeinszustand:;verschlechtert|gleichbleibend|gebessert;;
+
+;stop_fieldset;;  
+
+;start_fieldset;Labor;;
+    20570;pair_numb_sel_1;CRP;||
+	20580;pair_text_sel_2;;mg/l|mg/dl;;	
+    20590;pair_numb_sel_1;Calprotectin;||
+	20600;pair_text_sel_2;;μg/g|mg/kg;;
+	20610;pair_numb_sel_1;Hämoglobin;||
+    20620;pair_text_sel_2;;g/dl|g/l|mmol/l;;
+    20627;radio_cb;Standlabor (Basiswerte) wurde durchgeführt?;
+    20561;radio_cb;Bakterielle Untersuchung Stuhl durchgeführt und keine Patogene;;
+;stop_fieldset;;  
+
+;start_fieldset;Medikamentenanamnese;;
+    200071;radio_cb;Glukokortikoide  Prednison/Prednisolon/Budesonid?;Ja|Nein|Unbekannt;required
+    ;start_block;Ja;200071;
+        ;start_row;;
+            200270;radio_cb;@10@➥ Chronisch (Prednison/Prednisolon);
+            ;start_block;Ja;200270;
+                ;start_row;;
+                    200271;select;@30@ ≥ 20mg ≥ 3 Monate;Ja|Nein|Unbekannt;
+                    200372;select;@30@ ≥ 10 mg ≥ 3 Monate;Ja|Nein|Unbekannt;
+                    200373;select;@30@ ≥ 5 mg ≥ 3 Monate ;Ja|Nein|Unbekannt;
+                ;end_row;;
+            ;stop_block;;
+        ;end_row;;
+        ;start_row;;
+            200470;radio_cb;@10@➥ Chronisch (Budesonid);
+            ;start_block;Ja;200470;
+                ;start_row;;
+                    200471;select;@30@ oral ≥ 6 mg ≥ 3 Monate;Ja|Nein|Unbekannt;
+                    200572;select;@30@ rektal ≥ 2 mg ≥ 3 Monate;Ja|Nein|Unbekannt;
+               ;end_row;;
+            ;stop_block;;
+        ;end_row;;
+        ;start_row;;
+            200670;radio_cb;@10@➥ Mesalazin - Chronisch (Budesonid);
+            ;start_block;Ja;200670;
+                ;start_row;;
+                    200671;select;@30@ oral ≥ 2g ≥ 3 Monate;Ja|Nein|Unbekannt;
+                    200772;select;@30@  ≥ 1g ≥ 3 Monate;Ja|Nein|Unbekannt;
+                ;end_row;;
+            ;stop_block;;
+        ;end_row;;
+    ;stop_block;;
+    201081;select;Arzneimittelunverträglichkeiten??;Ja|Nein|Unbekannt;required
+        ;start_block;Ja;201081;
+            201083;text;@10@➥ Welche:|Medikationsangabe;;required 
+        ;stop_block;;
+;stop_fieldset;; 
+   
+;start_fieldset;Begleiterkrankungen;;
+     111200;radio_cb;Gibt es aktuelle Begleiterkrankungen?;Ja|Nein;required
+    ;start_block;Ja;111200;  
+        ;start_row;;;
+            111301;select_mt;@10@➥ Bitte wählen Sie die Erkrankungen;Asthma bronchiale|chronische Lebererkrankung|chronische Lungenerkrankung|Diabetes mellitus|Entzündungen der Nase und des Rachens (Nasopharyngitis)|Hypertonie|KHK|Lungenentzündung (Pneumonie)|Multiple Sklerose|Psoriasis|psychische Erkrankung|rheumatische Erkrankung|Schilddrüsenerkrankung|Z.n. Venenthrombose;
+            20500;textarea_1;@30@ andere Infektion(en), falls nicht in der Liste:;3;
+            20520;textarea_1;@30@ andere Erkrankung(en), falls nicht in der Liste:;3;
+        ;end_row;; 
+    ;stop_block;; 
+    9845672;info_100;<font style='color:red@semikolon@font-weight:bold'><center>Wichtig! Wenn Sie eine neue Begleiterkrankung dokumentiert haben, muss eine SAE/AE Meldung durchgeführt werden!</center></font>;;
+;stop_fieldset;;  
+
+
+444103;start_fieldset;Ultraschall;;
+    201540;number;Maximaler Aussendurchmesser|in mm;0|1000|1;
+    201550;number;Wanddicke|in mm;0|1000|1;
+    ;info_100;<center><b>Hinweis</b>: Entsprechend den Angaben im Flow Chart. Kopie des Originalbefundes in die Dokumentation inkl. der gewünschten Fotos</center>;;
+;stop_fieldset;;
+
+444104;start_fieldset;Histologie;;
+    201976;select;Allgemeine Beurteilung;Grad I (keine Entzündung)|Grad II (moderate Entzündung)|Grad III (schwere Entzündung/ Komplikationen);
+    201977;select;Histologie aus dem Sigma - Beurteilung nach dem Nancy-Index (siehe Histologiebefund);1|2|3|4;
+    ;info_100;<center><b>Hinweis</b>: Kopie des Originalbefundes in die Dokumentation</center>;;
+;stop_fieldset;;
+
+
+444100;start_fieldset;MAYO-Score;;
+    20116;select;Stuhfrequenz pro Tag;normal|1-2 Stühle|3-4 Stühle|>5 Stühle;required
+    20117;select;Rektaler Blutabgang;kein Blut|Blutstreifen bei weniger als 50% der Stühle|Deutliche Blutbeimengung meistens|Auch Blut ohne Stuhl;required
+    20118;select;Endoskopischer Befund;normaler Befund oder inaktive Erkrankung|milde Colitis (Erythem, leicht spröde Schleimhaut)|moderate Colitis (deutliches Erythem, Erosionen, Gefässmuster verschwunden)|schwere Colitis (Ulzerationen, spontane Blutungen);
+    20119;select;Globale Beurteilung des Arztes;normal|milde Erkrankung|moderate Erkrankung|schwere Erkrankung;required
+;stop_fieldset;;
+
+444106;start_fieldset;Montreal Klassifikation;;
+    20540;select;Ausbreitung;E1 - Ulcerative Proktitis (Befall nur auf das Rektum beschränkt)|E2 - Linksseitige Colitis (Befall beschränkt auf den Enddarm bis zum Milzbogen)|E3 - Pankolitis (Beteiligung über den Milzbogen hinaus);;
+;stop_fieldset;;  
+
+444102;start_fieldset;Extraintestinale Manifestation;;
+    20650;select;Besteht eine extraintestinale Manifestation?;Ja|Nein|Unbekannt;required
+    
+    ;start_block;Ja;20650;
+        20660;checkbox_base_60_indent;Gelenkbeteiligung (Arthralgie/Arthritis);
+        20670;checkbox_base_60_indent;Augenbeteiligung (Iritis/Uveitis);
+        20680;checkbox_base_60_indent;Erythema nodosum;
+        20690;checkbox_base_60_indent;Pyoderma gangraenosum;
+    ;stop_block;;
+;stop_fieldset;; 
+
+
+444105;start_fieldset;Short Health Scale (SHS) - Befinden der letzten 7 Tage;
+    116700;select;<table class='td_num'><tr><td>1.</td><td>Hatten Sie Beschwerden aufgrund Ihrer Darmerkrankung?</td></tr></table>;0 = keine Beschwerden|1|2|3|4|5|6|7|8|9|10 = sehr starke Beschwerden
+    116800;select;<table class='td_num'><tr><td>2.</td><td>Hat sich Ihre Darmerkrankung auf Ihre Fähigkeit ausgewirkt, alles zu schaffen, was Sie im Leben tun mussten oder tun wollten?</td></tr></table>;0 = überhaupt nicht|1|2|3|4|5|6|7|8|9|10 = sehr stark;required
+    116900;select;<table class='td_num'><tr><td>3.</td><td>Haben Sie sich wegern Ihrer Darmerkrankung Sorgen gemacht? </td></tr></table>;0 = überhaupt nicht|1|2|3|4|5|6|7|8|9|10 = sehr;required
+    117000;select;<table class='td_num'><tr><td>4.</td><td>Wie war Ihr allgemeines Wohlbefinden?</td></tr></table>;0 = augezeichnet|1|2|3|4|5|6|7|8|9|10 = sehr schlecht;required
+;stop_fieldset;;;
+
+
+444101;start_fieldset;Anamnestische Angaben;;  
+        106900;select;Wurden Sie wegen Ihrer Erkrankung stationär behandelt;Nein|Ja, 1 Mal|Ja, 2 Mal|Ja, 3 Mal;required
+        ;start_block;Ja, 1 Mal Ja, 2 Mal Ja, 3 Mal;106900;
+                ;start_row;;
+                    ;info_100_r;@10@➥ <b>1. Behandlung -------------</b>;
+                    ;info_30;;
+                    107100;date_tc_1_col_30_ohne_titel;[Behandlung_Datum_1];1950|this_year|true|false|Y(M)|de
+                    107200;select_1_col_30;[Behandlung_Grund_2]|Grund;Proctocolectomie (Entfernung des gesamten Dickdarms)|Partielle Colectomie (Entfernung eines Teils des Dickdarms)|Appentektomie (Entfernung des Blinddarms)|Ständiger Anus präter (künstlicher Darmausgang)
+                ;end_row;;
+            ;stop_block;; 
+            ;start_block;Ja, 2 Mal Ja, 3 Mal;106900;  
+                ;start_row;;
+                    ;info_100_r;@10@➥ <b>2. Behandlung -------------</b>;
+                    ;info_30;;
+                    107400;date_tc_1_col_30_ohne_titel;[Behandlung_Datum_2];1950|this_year|true|false|Y(M)|de
+                    107500;select_1_col_30;[Behandlung_Grund_2]|Grund;Proctocolectomie (Entfernung des gesamten Dickdarms)|Partielle Colectomie (Entfernung eines Teils des Dickdarms)|Appentektomie (Entfernung des Blinddarms)|Ständiger Anus präter (künstlicher Darmausgang)
+                ;end_row;;
+            ;stop_block;;
+            ;start_block;Ja, 3 Mal;106900;  
+                ;start_row;;
+                    ;info_100_r;@10@➥ <b>3. Behandlung -------------</b>;
+                    ;info_30;;
+                    107700;date_tc_1_col_30_ohne_titel;[Behandlung_Datum_3];1950|this_year|true|false|Y(M)|de
+                    107800;select_1_col_30;[Behandlung_Grund_3]|Grund;Proctocolectomie (Entfernung des gesamten Dickdarms)|Partielle Colectomie (Entfernung eines Teils des Dickdarms)|Appentektomie (Entfernung des Blinddarms)|Ständiger Anus präter (künstlicher Darmausgang)
+                ;end_row;;  
+            ;stop_block;;
+        ;stop_block;;
+    
+    20210;number;Wie viele Tage (ungefähr) waren Sie aufgrund der CU arbeitsunfähig im letzten Jahr?|Tage;0|100|1;
+    20211;number;Wie viele Tage waren Sie im Krankenhaus stationär aufgenommen im letzten Jahr?;0|100|1;
+        20220;checkbox_base_r;Zurzeit nicht in bezahlter Arbeit tätig;;required
+
+;stop_fieldset;;      
+
+
+;start_fieldset;Adverse Events / Komplikatonen;;
+    203650;radio_cb;Liegen AE/SAE/ Komplikatonen vor?;required
+    ;start_block;Ja;203650;
+        ;start_row;;
+            203653;radio_cb;@10@➥ Wurde die SAE fristgemäß gemeldet?;
+            200360;date_ab;@30@ Wann ist das Ereignis aufgetreten?;
+            200370;select;@30@ Steht das Ereignis in Verbindung mit der Studientherapie;Ja|Nein|Unbekannt;
+        ;end_row;;
+        200380;textarea_1;@30@ Darstellung des Ereignisses:;5;
+    ;stop_block;;
+;stop_fieldset;; 
+
+
+;start_fieldset;Vorzeitiger Abbruch;;
+    207652;radio_cb;Es erfolgte ein vorzeitiger Abbruch?;required
+    ;start_block;Ja;207652;
+        ;start_row;;
+            207653;date_ab;Abbruchdatum;;required
+        ;end_row;;
+        
+    ;stop_block;;
+;stop_fieldset;;

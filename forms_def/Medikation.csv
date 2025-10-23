@@ -1,0 +1,32 @@
+id;type;name;options;required
+
+;start_hidden_row;;
+    90;text;pid;;
+    91;text;Praxis-ID;;
+    92;text;Cedur-Nr.;;
+    93;text;Visite;;
+    94;text;Baseline;;
+    95;text;Diagnose;;
+    96;text;Geschlecht;;
+    98;text;copy_from;;
+    99;text;copy_during (not used);;
+    100;text;E;;
+    10020021;text;Typ;;
+;end_row;;
+
+;start_fieldset;Medikation;
+    ;col_type_switch;col;
+    10020020;select_col;Medikamenten-Gruppe|Bitte wählen;Anti-Durchfall Mittel|Biologika|Budesonid|Cortison-Präparate|Immunsenker|Mesalazine|Schmerzmittel|andere Medikamente;required
+    10020040;select_col;Medikament Bezeichnung;;required
+    10020080;select_col;Schema;;required
+    10020085;select_col;Dosierung;5mg/kg|7,5mg/kg|10mg/kg|unbekannt;required
+    10020050;date_tc_col;Einnahme-Start;1950|this_year|true|false|Y(M)|de;required
+    10020060;date_tc_col;Einnahme-Stop;1950|this_year|true|false|Y(M)|de;
+    10020070;select_col;Absetzungsgrund;Nebenwirkungen|Hat nicht gewirkt|Hat erst gewirkt, dann aber die Wirkung verloren|Mein eigener Wunsch|Es ging mir gut (Remission)|Operation|Schwangerschaft|Andere;
+
+
+;stop_fieldset;;
+
+;start_fieldset;Verlauf Medikation;
+    ;iframe;<iframe id='<?php echo $fcid?>_medikation' style='width:100%@semikolon@border:0@semikolon@'></iframe>;;
+;stop_fieldset;;

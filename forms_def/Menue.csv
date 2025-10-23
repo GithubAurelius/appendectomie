@@ -1,0 +1,12 @@
+id;type;name;
+;start_fieldset;Menü-Definition;
+99902000;text;Eltern;
+99902001;text;Menueintrag;
+99902002;text;Ebene;
+99902003;text;Reihenfolge;
+99902004;text;OnClick;
+99902005;text;Call;
+99902006;text;Link (no-parse);
+99902007;text;href;
+99902008;text;rights;
+;stop_fieldset;;

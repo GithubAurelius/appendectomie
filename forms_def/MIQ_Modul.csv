@@ -1,0 +1,18 @@
+id;type;name;
+;start_fieldset;Module;;
+;start_row;;
+99901000;text;Modultyp;
+99901001;text;Modulnummer (fg);
+99901002;text;Modulname;
+99901003;text;Formular-Bezeichnung /Form-Link;
+99901004;text;Listen-Bezeichnung;
+99901010;text;Positionierung FORM;
+99901011;text;Positionierung LIST;
+99901012;text;limit;
+99901015;text;url;
+99901016;text;Daten anlegen/ url-query;
+99901017;text;Work Mode;
+99901018;text;Winbox-Options;
+99901019;text;Multiple-Open;
+;end_row;;
+;stop_fieldset;;
