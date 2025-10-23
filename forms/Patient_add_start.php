@@ -70,7 +70,6 @@ if ($_POST) {
     if ($_POST['FF_10020001'] ?? "") $therapy_a[] = "Konservativ";
     if ($_POST['FF_10020002'] ?? "") $therapy_a[] = "Operation";
     $therapy  = implode("/", $therapy_a);
-   
 }
 
 
@@ -119,23 +118,23 @@ $operation_date = $form_data_a[10003048] ?? "";
 
 
 $all_ein_ja = 0;
-$fieldIds_ein_a = explode(',','10003101,10003102,10003103,10003104,10003105,10003106,10003107,10003108');
+$fieldIds_ein_a = explode(',', '10003101,10003102,10003103,10003104,10003105,10003106,10003107,10003108');
 $counter = 0;
-foreach ($fieldIds_ein_a as $key => $val) 
+foreach ($fieldIds_ein_a as $key => $val)
     if (($form_data_a[$val] ?? '') == 'Ja') $counter++;
 if ($counter == count($fieldIds_ein_a)) $all_ein_ja = 1;
 
 $all_ein_aus = 0;
-$fieldIds_aus_a = explode(',','10003201,10003202,10003203,10003204,10003205,10003206,10003207,10003208,10003209,10003210,10003211');
+$fieldIds_aus_a = explode(',', '10003201,10003202,10003203,10003204,10003205,10003206,10003207,10003208,10003209,10003210,10003211');
 $counter = 0;
-foreach ($fieldIds_aus_a as $key => $val) 
-   if (($form_data_a[$val] ?? '') == 'Nein') $counter++;
+foreach ($fieldIds_aus_a as $key => $val)
+    if (($form_data_a[$val] ?? '') == 'Nein') $counter++;
 if ($counter == count($fieldIds_aus_a)) $all_ein_aus = 1;
 
 $visite_button = "";
 $data_complete = 0;
 if (($konservativ || $operation) && $ppid && $pgender && $age && $weight && $size && $ext_fcid && $all_ein_ja && $all_ein_aus) {
-    $visite_button = "<button style='min-width:24px;max-width:24px;padding:2px' title ='Neue Visite anlegen' type='button' onclick=\"window.top.forward_form('form', 'fcid', '-1', 'Visite', " . $num . ", param_a)\";><img src='" . MIQ_PATH . "/img/new_add.svg' width='16px'></button>";
+    $visite_button = "<button style='border:0;min-width:24px;min-width:24px;max-width:140px;padding: #0' title ='Neue Visite anlegen' type='button' onclick=\"window.top.forward_form('form', 'fcid', '-1', 'Visite', " . $num . ", param_a)\"; class='aref_button'><img src='" . MIQ_PATH . "/img/new_add.svg' width='16px'><span style='padding-left:6px;vertical-align:top;'>Neue Visite</span></button>";
     $data_complete = 1;
     if ($operation && !$operation_date) $data_complete = 0;
     if ($konservativ && !$konservativ_date) $data_complete = 0;
@@ -222,35 +221,14 @@ if (($konservativ || $operation) && $ppid && $pgender && $age && $weight && $siz
 <!-- tabs -->
 <div id='patient_tabs' class="tabs">
     <div class="tab-buttons">
-        <button type="button" class="tab-button active" data-tab="tab1" id='visite_tab'>Visite</button> <?php echo $visite_button ?>
+        &nbsp;<?php echo $visite_button ?><button type="button" class="tab-button active" data-tab="tab1" id='visite_tab'>Visiten</button> 
         <button type="button" class="tab-button" data-tab="tab2">Scores</button>
-        <button type="button" class="tab-button" data-tab="tab3">Befragung</button>
-        <button type="button" class="tab-button" data-tab="tab4">Untersuchung</button>
-        <button type="button" class="tab-button" data-tab="tab5">Labor</button>
-        <button type="button" class="tab-button" data-tab="tab6">Medikation</button>
-        <button type="button" class="tab-button" data-tab="tab7">Nebenwirkungen</button>
-
     </div>
     <div class="tab-content active" id="tab1">
         <iframe id='_visite' style='width:100%; border:none; padding:0; margin:0;'></iframe>
     </div>
     <div class="tab-content" id="tab2">
         <iframe id='_scores' style='width:100%; border:none; padding:0; margin:0;'></iframe>
-    </div>
-    <div class="tab-content" id="tab3">
-        <iframe id='_patientenbefragung' style='width:100%; border:none; padding:0; margin:0;'></iframe>
-    </div>
-    <div class="tab-content" id="tab4">
-        <iframe id='_untersuchung' style='width:100%; border:none; padding:0; margin:0;'></iframe>
-    </div>
-    <div class="tab-content" id="tab5">
-        <iframe id='_labor' style='width:100%; border:none; padding:0; margin:0;'></iframe>
-    </div>
-    <div class="tab-content" id="tab6">
-        <iframe id='_medikation' style='width:100%; border:none; padding:0; margin:0;'></iframe>
-    </div>
-    <div class="tab-content" id="tab7">
-        <iframe id='_nebenwirkung' style='width:100%; border:none; padding:0; margin:0;'></iframe>
     </div>
 
 </div>

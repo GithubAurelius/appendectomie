@@ -433,13 +433,14 @@
 
     const set_height = main_win_height * 3.3 / 5;
 
+    var data_complete = <?php echo json_encode($data_complete ?? 0) ?>; // only for design, real use at end
     const form_name = <?php echo json_encode($form_name) ?>;
     if (form_name) {
         const thisbox_id = window.top.window_boxes[form_name]['wid'];
         if (thisbox_id) {
             const thisbox = window.top.document.getElementById(thisbox_id);
             const this_width = width_100 * 2 / 5;
-            thisbox.winbox.resize(this_width, set_height).move(0, menue_height);
+            if (data_complete) thisbox.winbox.resize(this_width, set_height).move(0, menue_height);
             thisbox.winbox.setIcon(window.top.miq_root_path + 'img/person.svg');
             // thisbox.winbox.setBackground("#e27828ff");
         }
@@ -519,7 +520,7 @@
 
     // Show and hide patient data - ready fpr visits
     let background_field_save = 0;
-    const data_complete = <?php echo json_encode($data_complete ?? 0) ?>;
+    data_complete = <?php echo json_encode($data_complete ?? 0) ?>;
     if (data_complete) {
         hide_patient_data(tab_a, this_inner_win_height, fieldset_height);
     } else {
