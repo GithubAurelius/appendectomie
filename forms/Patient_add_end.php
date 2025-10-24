@@ -37,7 +37,8 @@
                 ], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
                 ?>;
     const param_str = JSON.stringify(param_a);
-
+    // console.log(param_a);
+    
     // Stammdaten Logik
     const start_date_field = document.getElementById('FF_10003045');
     if (start_date_field) start_date_field.value = format_today();

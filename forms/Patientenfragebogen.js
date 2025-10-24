@@ -591,7 +591,7 @@ function filter_patient_medic_view(user_is_patient, helper) {
             block_labor.style.display = 'flex';
         }
     }
-    if (!first_visit) {
+    if (!visite_week) {
         // block_op___.style.display = 'none';
     }
 }

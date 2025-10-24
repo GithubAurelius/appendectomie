@@ -32,7 +32,7 @@
     }
 
     // Plausibilisation
-    function extra_plaus(user_is_patient, first_visit) {
+    function extra_plaus(user_is_patient, visite_week) {
 
         function op(ids) {
             const op_field = document.getElementById('FF_106900');
@@ -94,7 +94,7 @@
 
         // // Anamnese
         // field_in_group_validation('102800', ['Ja'], ['103000', '103100', '103200', '103300', '103400'], 'one'); // smoker
-        // if (first_visit) field_in_group_validation('102800', ['Nein'], ['102805'], 'all'); // ex-smoker
+        // if (visite_week) field_in_group_validation('102800', ['Nein'], ['102805'], 'all'); // ex-smoker
         // field_in_group_validation('102805', ['Ja'], ['102806'], 'all'); // smoker
         // field_in_group_validation('102805', ['Ja'], ['102806'], 'all'); // smoker
         // field_in_group_validation('106000', ['Angestellt tätig', 'Selbständig tätig'], ['106500', '106600'], 'all'); // occupation
@@ -115,25 +115,25 @@
         // field_in_group_validation('106000', ['Berentet aufgrund anderer Erkrankungen'], ['106100'], 'all'); // retired 2
         // field_in_group_validation('106200', ['Ja'], ['106300'], 'all'); // off work due to illness 
         // // Schwangerschaft
-        // // if (first_visit) 
+        // // if (visite_week) 
         // field_in_group_validation('108500', ['Nein'], ['109100'], 'all'); // pregnacy no 
         // field_in_group_validation('109100', ['Ja'], ['109200', '109300'], 'all'); // num of pregnacy
         // field_in_group_validation('109300', ['Ja'], ['109400', '110100', '109700', '109500', '109700', '109600', '109800', '109900', '110000'], 'all'); // pregnacy complication 
         // field_in_group_validation('108500', ['Ja'], ['108600', '108700', '108800', '108900'], 'all'); // pregnacy yes
         // field_in_group_validation('108900', ['Ja'], ['109000'], 'all'); // former pregnacy
         // // family disposition
-        // // if (first_visit) 
+        // // if (visite_week) 
         // field_in_group_validation('105000', ['Ja'], ['105100', '105200', '105400', '105500', '105600', '105700', '105800', '105900'], 'one', 'Ja'); // familiary dispsition
-        // // if (first_visit) 
+        // // if (visite_week) 
         // field_in_group_validation('105200', ['Ja'], ['105300'], 'one'); // twins
         // // misc
         // field_in_group_validation('102400', ['Ja'], ['102500'], 'all'); // hospital
-        // // if (first_visit) 
+        // // if (visite_week) 
         // field_in_group_validation('111200', ['Ja'], ['111301', '115500'], 'one'); // misc medical conditions
-        // // if (first_visit) 
+        // // if (visite_week) 
         // field_in_group_validation('115500', ['Ja'], ['115501'], 'one'); // medical conditions
         // // date comparison first symptoms to diagnosis
-        // // if (first_visit) 
+        // // if (visite_week) 
         // compare_dates('FF_102300', 'FF_102200', '<=');
 
         // // diagnoses only medics
@@ -194,15 +194,15 @@
         param_a['ext_fcid'] = <?php echo json_encode($form_data_a[$_SESSION['param']['ext_fcid']] ?? ""); ?>;
         param_a['geschlecht'] = <?php echo json_encode($form_data_a[$_SESSION['param']['geschlecht']] ?? ""); ?>;
         param_a['therapy'] = <?php echo json_encode($form_data_a[$_SESSION['param']['therapy']] ?? ""); ?>;
-        param_a['first_visit'] = <?php echo json_encode($form_data_a[$_SESSION['param']['first_visit']] ?? ""); ?>;
+        param_a['visite_week'] = <?php echo json_encode($form_data_a[$_SESSION['param']['visite_week']] ?? ""); ?>;
         param_a['visite'] = <?php echo json_encode($form_data_a[$_SESSION['param']['visite']] ?? ""); ?>;
         param_a['visite_datum'] = <?php echo json_encode($form_data_a[10005020] ?? ""); ?>;
         const param_str = JSON.stringify(param_a);
 
         // medication frames
 
-        // if (!param_a || typeof param_a['first_visit'] === 'undefined') {
-        //     console.warn('⚠ param_a.first_visit nicht definiert.');
+        // if (!param_a || typeof param_a['visite_week'] === 'undefined') {
+        //     console.warn('⚠ param_a.visite_week nicht definiert.');
         // }
 
 
@@ -245,7 +245,7 @@
     const pid = <?php echo json_encode($form_data_a[$_SESSION['param']['pid']]); ?>;
     const fcid = <?php echo json_encode($fcid); ?>;
     const visite = <?php echo json_encode($form_data_a[$_SESSION['param']['visite']]) ?>;
-    const first_visit = <?php echo json_encode($form_data_a[$_SESSION['param']['first_visit']] ?? "") ?>;
+    const visite_week = <?php echo json_encode($form_data_a[$_SESSION['param']['visite_week']] ?? "") ?>;
     const gender_val = param_a['geschlecht'];
     // var groesse_val = <?php echo json_encode($groesse) ?>;
 
@@ -260,7 +260,7 @@
     if (!haemoglobin.value) haemoglobin.value = 'g/dl';
 
 
-    if (first_visit != 'Woche 0' && first_visit != 'Woche 24') {
+    if (visite_week != 'Woche 0' && visite_week != 'Woche 24') {
         // MAYO
         const endoskopie_0 = document.getElementById('SH_20118_a')
         const endoskopie_1 = document.getElementById('SH_20118_b')
@@ -280,13 +280,13 @@
         document.getElementById('FS_444106').style.display = 'none'; // Montreal Klassifikation
         document.getElementById('FS_444100').getElementsByTagName('legend')[0].innerHTML = 'Parieller MAYO-Score';
     }
-    if (first_visit == 'Woche 24') {
+    if (visite_week == 'Woche 24') {
         document.getElementById('FS_444106').style.display = 'none'; // Montreal Klassifikation
         document.getElementById('SH_20561_a').style.display = 'none'; // Bakterielle Untersuchung Stuhl  
         document.getElementById('SH_20561_b').style.display = 'none';
     }
 
-    if (first_visit != 'Woche 0') {
+    if (visite_week != 'Woche 0') {
         const outerDiv = document.getElementById('SH_111200_a');
         if (outerDiv) {
             const innerDiv = outerDiv.querySelector('.desc_f');
@@ -335,7 +335,7 @@
         //     fetchDataAndUpdateForm(fcid, 10010, 91, param_a['praxis_pid']);
         //     fetchDataAndUpdateForm(fcid, 10010, 92, param_a['ext_fcid']);
         //     fetchDataAndUpdateForm(fcid, 10010, 93, visite);
-        //     fetchDataAndUpdateForm(fcid, 10010, 94, first_visit);
+        //     fetchDataAndUpdateForm(fcid, 10010, 94, visite_week);
         //     fetchDataAndUpdateForm(fcid, 10010, 95, diagnosis_val);
         //     fetchDataAndUpdateForm(fcid, 10010, 96, gender_val);
         //     fetchDataAndUpdateForm(fcid, 10010, 10005020, param_a['visite_datum']);

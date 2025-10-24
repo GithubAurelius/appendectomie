@@ -45,9 +45,9 @@ if (!isset($form_data_a[$_SESSION['param']['pid']]) || $form_data_a[$_SESSION['p
     $form_data_a[$_SESSION['param']['geschlecht']] = $param_a['geschlecht'];
     $form_data_a[$_SESSION['param']['therapy']] = $param_a['therapy'];
     $form_data_a[$_SESSION['param']['visite']] = $param_a['visite'];
-    $form_data_a[$_SESSION['param']['first_visit']] = $param_a['first_visit'];
+    $form_data_a[$_SESSION['param']['visite_week']] = $param_a['visite_week'];
     $form_data_a[10005020] = $param_a['visite_datum'];
-    $form_data_a[10005021] = $param_a['first_visit'];
+    $form_data_a[10005021] = $param_a['visite_week'];
 
     $status = 'FIRST_INIT';
     // echo "<pre>"; echo print_r($_SESSION['param']); echo "</pre>";

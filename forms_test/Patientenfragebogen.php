@@ -160,7 +160,7 @@ require_once MIQ_ROOT . "/modules/form_base/form_start.php";
                         <div class='desc_f' >Selbstwahrnehmung des Patienten zum Allgemeinszustand:</div>
                     </div>
                     <div class='col_b' id='SH_20560_b'>
-                        <select  id='FF_20560' name='FF_20560'  onchange='follow_select(this)'><option value=''></option><option value='verschlechtert' <?php if (($form_data_a[20560] ?? '') == 'verschlechtert') echo 'selected'; ?>>verschlechtert</option><option value='gleichbleibend' <?php if (($form_data_a[20560] ?? '') == 'gleichbleibend') echo 'selected'; ?>>gleichbleibend</option><option value='gebessert' <?php if (($form_data_a[20560] ?? '') == 'gebessert') echo 'selected'; ?>>gebessert</option>
+                        <select required id='FF_20560' name='FF_20560'  onchange='follow_select(this)'><option value=''></option><option value='verschlechtert' <?php if (($form_data_a[20560] ?? '') == 'verschlechtert') echo 'selected'; ?>>verschlechtert</option><option value='gleichbleibend' <?php if (($form_data_a[20560] ?? '') == 'gleichbleibend') echo 'selected'; ?>>gleichbleibend</option><option value='gebessert' <?php if (($form_data_a[20560] ?? '') == 'gebessert') echo 'selected'; ?>>gebessert</option>
                         </select>
                     </div>
 			</fieldset>
@@ -170,26 +170,26 @@ require_once MIQ_ROOT . "/modules/form_base/form_start.php";
                         <div class='desc_f' >CRP</div>
                     </div>
                     <div class='col_b' style='display: flex; flex-wrap: nowrap;white-space: nowrap;' id='SH_20570_b'>
-                        <input  type='number' id='FF_20570' name='FF_20570' value="<?php echo htmlspecialchars($form_data_a[20570] ?? ''); ?>" min='' max='' step='' placeholder=''><select id='FF_20580' name='FF_20580'  onchange='follow_select(this)'><option value=''></option><option value='mg/l' <?php if (($form_data_a[20580] ?? '') == 'mg/l') echo 'selected'; ?>>mg/l</option><option value='mg/dl' <?php if (($form_data_a[20580] ?? '') == 'mg/dl') echo 'selected'; ?>>mg/dl</option></select></div>
+                        <input required type='number' id='FF_20570' name='FF_20570' value="<?php echo htmlspecialchars($form_data_a[20570] ?? ''); ?>" min='0' max='100' step='0.1' placeholder=''><select id='FF_20580' name='FF_20580'  onchange='follow_select(this)'><option value=''></option><option value='mg/l' <?php if (($form_data_a[20580] ?? '') == 'mg/l') echo 'selected'; ?>>mg/l</option><option value='mg/dl' <?php if (($form_data_a[20580] ?? '') == 'mg/dl') echo 'selected'; ?>>mg/dl</option></select></div>
 					
                     <div class='col_a'  id='SH_20590_a'>
                         <div class='desc_f' >Calprotectin</div>
                     </div>
                     <div class='col_b' style='display: flex; flex-wrap: nowrap;white-space: nowrap;' id='SH_20590_b'>
-                        <input  type='number' id='FF_20590' name='FF_20590' value="<?php echo htmlspecialchars($form_data_a[20590] ?? ''); ?>" min='' max='' step='' placeholder=''><select id='FF_20600' name='FF_20600'  onchange='follow_select(this)'><option value=''></option><option value='μg/g' <?php if (($form_data_a[20600] ?? '') == 'μg/g') echo 'selected'; ?>>μg/g</option><option value='mg/kg' <?php if (($form_data_a[20600] ?? '') == 'mg/kg') echo 'selected'; ?>>mg/kg</option></select></div>
+                        <input required type='number' id='FF_20590' name='FF_20590' value="<?php echo htmlspecialchars($form_data_a[20590] ?? ''); ?>" min='0' max='300' step='1' placeholder=''><select id='FF_20600' name='FF_20600'  onchange='follow_select(this)'><option value=''></option><option value='μg/g' <?php if (($form_data_a[20600] ?? '') == 'μg/g') echo 'selected'; ?>>μg/g</option><option value='mg/kg' <?php if (($form_data_a[20600] ?? '') == 'mg/kg') echo 'selected'; ?>>mg/kg</option></select></div>
 					
                     <div class='col_a'  id='SH_20610_a'>
                         <div class='desc_f' >Hämoglobin</div>
                     </div>
                     <div class='col_b' style='display: flex; flex-wrap: nowrap;white-space: nowrap;' id='SH_20610_b'>
-                        <input  type='number' id='FF_20610' name='FF_20610' value="<?php echo htmlspecialchars($form_data_a[20610] ?? ''); ?>" min='' max='' step='' placeholder=''><select id='FF_20620' name='FF_20620'  onchange='follow_select(this)'><option value=''></option><option value='g/dl' <?php if (($form_data_a[20620] ?? '') == 'g/dl') echo 'selected'; ?>>g/dl</option><option value='g/l' <?php if (($form_data_a[20620] ?? '') == 'g/l') echo 'selected'; ?>>g/l</option><option value='mmol/l' <?php if (($form_data_a[20620] ?? '') == 'mmol/l') echo 'selected'; ?>>mmol/l</option></select></div>
+                        <input required type='number' id='FF_20610' name='FF_20610' value="<?php echo htmlspecialchars($form_data_a[20610] ?? ''); ?>" min='0' max='30' step='0.1' placeholder=''><select id='FF_20620' name='FF_20620'  onchange='follow_select(this)'><option value=''></option><option value='g/dl' <?php if (($form_data_a[20620] ?? '') == 'g/dl') echo 'selected'; ?>>g/dl</option><option value='g/l' <?php if (($form_data_a[20620] ?? '') == 'g/l') echo 'selected'; ?>>g/l</option><option value='mmol/l' <?php if (($form_data_a[20620] ?? '') == 'mmol/l') echo 'selected'; ?>>mmol/l</option></select></div>
 					
                     <div class='col_a' id='SH_20627_a'>
                         <div class='desc_f' >Standlabor (Basiswerte) wurde durchgeführt?</div>
                     </div>
                     <div class='col_b' id='SH_20627_b'  style='text-align:center'>
                         <div id='cbm_20627'>
-                            <input data-rcb='20627'  class='sim_hide' type='text' id='FF_20627' name='FF_20627' value="<?php echo $form_data_a[20627] ?? ''; ?>"  onchange='follow_select(this)'>
+                            <input data-rcb='20627' required class='sim_hide' type='text' id='FF_20627' name='FF_20627' value="<?php echo $form_data_a[20627] ?? ''; ?>"  onchange='follow_select(this)'>
                             <label class='custom-checkbox-wrapper'><span id='CB_20627_Ja' class='custom-checkbox'></span> <span class='custom-checkbox-label'>Ja</span></label>
                             &nbsp;&nbsp;&nbsp;&nbsp;
                             <label class='custom-checkbox-wrapper'><span id='CB_20627_Nein' class='custom-checkbox'></span> <span class='custom-checkbox-label'>Nein</span></label>
@@ -201,7 +201,7 @@ require_once MIQ_ROOT . "/modules/form_base/form_start.php";
                     </div>
                     <div class='col_b' id='SH_20561_b'  style='text-align:center'>
                         <div id='cbm_20561'>
-                            <input data-rcb='20561'  class='sim_hide' type='text' id='FF_20561' name='FF_20561' value="<?php echo $form_data_a[20561] ?? ''; ?>"  onchange='follow_select(this)'>
+                            <input data-rcb='20561' required class='sim_hide' type='text' id='FF_20561' name='FF_20561' value="<?php echo $form_data_a[20561] ?? ''; ?>"  onchange='follow_select(this)'>
                             <label class='custom-checkbox-wrapper'><span id='CB_20561_Ja' class='custom-checkbox'></span> <span class='custom-checkbox-label'>Ja</span></label>
                             &nbsp;&nbsp;&nbsp;&nbsp;
                             <label class='custom-checkbox-wrapper'><span id='CB_20561_Nein' class='custom-checkbox'></span> <span class='custom-checkbox-label'>Nein</span></label>
@@ -358,7 +358,7 @@ require_once MIQ_ROOT . "/modules/form_base/form_start.php";
                     </div>
                     <div class='col_b' id='SH_111200_b'  style='text-align:center'>
                         <div id='cbm_111200'>
-                            <input data-rcb='111200' required class='sim_hide' type='text' id='FF_111200' name='FF_111200' value="<?php echo $form_data_a[111200] ?? ''; ?>"  onchange='follow_select(this)'>
+                            <input data-rcb='111200'  class='sim_hide' type='text' id='FF_111200' name='FF_111200' value="<?php echo $form_data_a[111200] ?? ''; ?>"  onchange='follow_select(this)'>
                             <label class='custom-checkbox-wrapper'><span id='CB_111200_Ja' class='custom-checkbox'></span> <span class='custom-checkbox-label'>Ja</span></label>
                             &nbsp;&nbsp;&nbsp;&nbsp;
                             <label class='custom-checkbox-wrapper'><span id='CB_111200_Nein' class='custom-checkbox'></span> <span class='custom-checkbox-label'>Nein</span></label>
@@ -400,24 +400,24 @@ require_once MIQ_ROOT . "/modules/form_base/form_start.php";
                         <div class='desc_f' >Maximaler Aussendurchmesser</div>
                     </div>
                     <div class='col_b ' id='SH_201540_b'>
-                        <input  type='number' id='FF_201540' name='FF_201540' value="<?php echo htmlspecialchars($form_data_a[201540] ?? ''); ?>" min='0' max='1000' step='1' placeholder='in mm'>
+                        <input required type='number' id='FF_201540' name='FF_201540' value="<?php echo htmlspecialchars($form_data_a[201540] ?? ''); ?>" min='0' max='1000' step='1' placeholder='in mm'>
                     </div>
 					
                     <div class='col_a ' id='SH_201550_a'>
                         <div class='desc_f' >Wanddicke</div>
                     </div>
                     <div class='col_b ' id='SH_201550_b'>
-                        <input  type='number' id='FF_201550' name='FF_201550' value="<?php echo htmlspecialchars($form_data_a[201550] ?? ''); ?>" min='0' max='1000' step='1' placeholder='in mm'>
+                        <input required type='number' id='FF_201550' name='FF_201550' value="<?php echo htmlspecialchars($form_data_a[201550] ?? ''); ?>" min='0' max='1000' step='1' placeholder='in mm'>
                     </div>
 					<div class='col_100 infotext'  id='SH_'><center><b>Hinweis</b>: Entsprechend den Angaben im Flow Chart. Kopie des Originalbefundes in die Dokumentation inkl. der gewünschten Fotos</center></div>
 			</fieldset>
 			<fieldset id='FS_444104'><legend>Histologie</legend>
 					
                     <div class='col_a' id='SH_201976_a'>
-                        <div class='desc_f' >Allgemeine Beurteilung</div>
+                        <div class='desc_f' >Beurteilung Appendix</div>
                     </div>
                     <div class='col_b' id='SH_201976_b'>
-                        <select  id='FF_201976' name='FF_201976'  onchange='follow_select(this)'><option value=''></option><option value='Grad I (keine Entzündung)' <?php if (($form_data_a[201976] ?? '') == 'Grad I (keine Entzündung)') echo 'selected'; ?>>Grad I (keine Entzündung)</option><option value='Grad II (moderate Entzündung)' <?php if (($form_data_a[201976] ?? '') == 'Grad II (moderate Entzündung)') echo 'selected'; ?>>Grad II (moderate Entzündung)</option><option value='Grad III (schwere Entzündung/ Komplikationen)' <?php if (($form_data_a[201976] ?? '') == 'Grad III (schwere Entzündung/ Komplikationen)') echo 'selected'; ?>>Grad III (schwere Entzündung/ Komplikationen)</option>
+                        <select required id='FF_201976' name='FF_201976'  onchange='follow_select(this)'><option value=''></option><option value='Grad I (keine Entzündung)' <?php if (($form_data_a[201976] ?? '') == 'Grad I (keine Entzündung)') echo 'selected'; ?>>Grad I (keine Entzündung)</option><option value='Grad II (moderate Entzündung)' <?php if (($form_data_a[201976] ?? '') == 'Grad II (moderate Entzündung)') echo 'selected'; ?>>Grad II (moderate Entzündung)</option><option value='Grad III (schwere Entzündung/ Komplikationen)' <?php if (($form_data_a[201976] ?? '') == 'Grad III (schwere Entzündung/ Komplikationen)') echo 'selected'; ?>>Grad III (schwere Entzündung/ Komplikationen)</option>
                         </select>
                     </div>
 					
@@ -425,7 +425,7 @@ require_once MIQ_ROOT . "/modules/form_base/form_start.php";
                         <div class='desc_f' >Histologie aus dem Sigma - Beurteilung nach dem Nancy-Index (siehe Histologiebefund)</div>
                     </div>
                     <div class='col_b' id='SH_201977_b'>
-                        <select  id='FF_201977' name='FF_201977'  onchange='follow_select(this)'><option value=''></option><option value='1' <?php if (($form_data_a[201977] ?? '') == '1') echo 'selected'; ?>>1</option><option value='2' <?php if (($form_data_a[201977] ?? '') == '2') echo 'selected'; ?>>2</option><option value='3' <?php if (($form_data_a[201977] ?? '') == '3') echo 'selected'; ?>>3</option><option value='4' <?php if (($form_data_a[201977] ?? '') == '4') echo 'selected'; ?>>4</option>
+                        <select required id='FF_201977' name='FF_201977'  onchange='follow_select(this)'><option value=''></option><option value='1' <?php if (($form_data_a[201977] ?? '') == '1') echo 'selected'; ?>>1</option><option value='2' <?php if (($form_data_a[201977] ?? '') == '2') echo 'selected'; ?>>2</option><option value='3' <?php if (($form_data_a[201977] ?? '') == '3') echo 'selected'; ?>>3</option><option value='4' <?php if (($form_data_a[201977] ?? '') == '4') echo 'selected'; ?>>4</option>
                         </select>
                     </div>
 					<div class='col_100 infotext'  id='SH_'><center><b>Hinweis</b>: Kopie des Originalbefundes in die Dokumentation</center></div>
@@ -452,7 +452,7 @@ require_once MIQ_ROOT . "/modules/form_base/form_start.php";
                         <div class='desc_f' >Endoskopischer Befund</div>
                     </div>
                     <div class='col_b' id='SH_20118_b'>
-                        <select  id='FF_20118' name='FF_20118'  onchange='follow_select(this)'><option value=''></option><option value='normaler Befund oder inaktive Erkrankung' <?php if (($form_data_a[20118] ?? '') == 'normaler Befund oder inaktive Erkrankung') echo 'selected'; ?>>normaler Befund oder inaktive Erkrankung</option><option value='milde Colitis (Erythem, leicht spröde Schleimhaut)' <?php if (($form_data_a[20118] ?? '') == 'milde Colitis (Erythem, leicht spröde Schleimhaut)') echo 'selected'; ?>>milde Colitis (Erythem, leicht spröde Schleimhaut)</option><option value='moderate Colitis (deutliches Erythem, Erosionen, Gefässmuster verschwunden)' <?php if (($form_data_a[20118] ?? '') == 'moderate Colitis (deutliches Erythem, Erosionen, Gefässmuster verschwunden)') echo 'selected'; ?>>moderate Colitis (deutliches Erythem, Erosionen, Gefässmuster verschwunden)</option><option value='schwere Colitis (Ulzerationen, spontane Blutungen)' <?php if (($form_data_a[20118] ?? '') == 'schwere Colitis (Ulzerationen, spontane Blutungen)') echo 'selected'; ?>>schwere Colitis (Ulzerationen, spontane Blutungen)</option>
+                        <select required id='FF_20118' name='FF_20118'  onchange='follow_select(this)'><option value=''></option><option value='normaler Befund oder inaktive Erkrankung' <?php if (($form_data_a[20118] ?? '') == 'normaler Befund oder inaktive Erkrankung') echo 'selected'; ?>>normaler Befund oder inaktive Erkrankung</option><option value='milde Colitis (Erythem, leicht spröde Schleimhaut)' <?php if (($form_data_a[20118] ?? '') == 'milde Colitis (Erythem, leicht spröde Schleimhaut)') echo 'selected'; ?>>milde Colitis (Erythem, leicht spröde Schleimhaut)</option><option value='moderate Colitis (deutliches Erythem, Erosionen, Gefässmuster verschwunden)' <?php if (($form_data_a[20118] ?? '') == 'moderate Colitis (deutliches Erythem, Erosionen, Gefässmuster verschwunden)') echo 'selected'; ?>>moderate Colitis (deutliches Erythem, Erosionen, Gefässmuster verschwunden)</option><option value='schwere Colitis (Ulzerationen, spontane Blutungen)' <?php if (($form_data_a[20118] ?? '') == 'schwere Colitis (Ulzerationen, spontane Blutungen)') echo 'selected'; ?>>schwere Colitis (Ulzerationen, spontane Blutungen)</option>
                         </select>
                     </div>
 					
@@ -470,7 +470,7 @@ require_once MIQ_ROOT . "/modules/form_base/form_start.php";
                         <div class='desc_f' >Ausbreitung</div>
                     </div>
                     <div class='col_b' id='SH_20540_b'>
-                        <select  id='FF_20540' name='FF_20540'  onchange='follow_select(this)'><option value=''></option><option value='E1 - Ulcerative Proktitis (Befall nur auf das Rektum beschränkt)' <?php if (($form_data_a[20540] ?? '') == 'E1 - Ulcerative Proktitis (Befall nur auf das Rektum beschränkt)') echo 'selected'; ?>>E1 - Ulcerative Proktitis (Befall nur auf das Rektum beschränkt)</option><option value='E2 - Linksseitige Colitis (Befall beschränkt auf den Enddarm bis zum Milzbogen)' <?php if (($form_data_a[20540] ?? '') == 'E2 - Linksseitige Colitis (Befall beschränkt auf den Enddarm bis zum Milzbogen)') echo 'selected'; ?>>E2 - Linksseitige Colitis (Befall beschränkt auf den Enddarm bis zum Milzbogen)</option><option value='E3 - Pankolitis (Beteiligung über den Milzbogen hinaus)' <?php if (($form_data_a[20540] ?? '') == 'E3 - Pankolitis (Beteiligung über den Milzbogen hinaus)') echo 'selected'; ?>>E3 - Pankolitis (Beteiligung über den Milzbogen hinaus)</option>
+                        <select required id='FF_20540' name='FF_20540'  onchange='follow_select(this)'><option value=''></option><option value='E1 - Ulcerative Proktitis (Befall nur auf das Rektum beschränkt)' <?php if (($form_data_a[20540] ?? '') == 'E1 - Ulcerative Proktitis (Befall nur auf das Rektum beschränkt)') echo 'selected'; ?>>E1 - Ulcerative Proktitis (Befall nur auf das Rektum beschränkt)</option><option value='E2 - Linksseitige Colitis (Befall beschränkt auf den Enddarm bis zum Milzbogen)' <?php if (($form_data_a[20540] ?? '') == 'E2 - Linksseitige Colitis (Befall beschränkt auf den Enddarm bis zum Milzbogen)') echo 'selected'; ?>>E2 - Linksseitige Colitis (Befall beschränkt auf den Enddarm bis zum Milzbogen)</option><option value='E3 - Pankolitis (Beteiligung über den Milzbogen hinaus)' <?php if (($form_data_a[20540] ?? '') == 'E3 - Pankolitis (Beteiligung über den Milzbogen hinaus)') echo 'selected'; ?>>E3 - Pankolitis (Beteiligung über den Milzbogen hinaus)</option>
                         </select>
                     </div>
 			</fieldset>
@@ -520,32 +520,28 @@ require_once MIQ_ROOT . "/modules/form_base/form_start.php";
                         <div class='desc_f' ><table class='td_num'><tr><td>1.</td><td>Hatten Sie Beschwerden aufgrund Ihrer Darmerkrankung?</td></tr></table></div>
                     </div>
                     <div class='col_b' id='SH_116700_b'>
-                        <select  id='FF_116700' name='FF_116700'  onchange='follow_select(this)'><option value=''></option><option value='0 = keine Beschwerden' <?php if (($form_data_a[116700] ?? '') == '0 = keine Beschwerden') echo 'selected'; ?>>0 = keine Beschwerden</option><option value='1' <?php if (($form_data_a[116700] ?? '') == '1') echo 'selected'; ?>>1</option><option value='2' <?php if (($form_data_a[116700] ?? '') == '2') echo 'selected'; ?>>2</option><option value='3' <?php if (($form_data_a[116700] ?? '') == '3') echo 'selected'; ?>>3</option><option value='4' <?php if (($form_data_a[116700] ?? '') == '4') echo 'selected'; ?>>4</option><option value='5' <?php if (($form_data_a[116700] ?? '') == '5') echo 'selected'; ?>>5</option><option value='6' <?php if (($form_data_a[116700] ?? '') == '6') echo 'selected'; ?>>6</option><option value='7' <?php if (($form_data_a[116700] ?? '') == '7') echo 'selected'; ?>>7</option><option value='8' <?php if (($form_data_a[116700] ?? '') == '8') echo 'selected'; ?>>8</option><option value='9' <?php if (($form_data_a[116700] ?? '') == '9') echo 'selected'; ?>>9</option><option value='10 = sehr starke Beschwerden' <?php if (($form_data_a[116700] ?? '') == '10 = sehr starke Beschwerden') echo 'selected'; ?>>10 = sehr starke Beschwerden</option>
-                        </select>
+                        <input data-fg='10010' required type='text' id='FF_116700' name='FF_116700' value="<?php echo htmlspecialchars($form_data_a[116700] ?? ''); ?>" placeholder=''>
                     </div>
 					
                     <div class='col_a' id='SH_116800_a'>
                         <div class='desc_f' ><table class='td_num'><tr><td>2.</td><td>Hat sich Ihre Darmerkrankung auf Ihre Fähigkeit ausgewirkt, alles zu schaffen, was Sie im Leben tun mussten oder tun wollten?</td></tr></table></div>
                     </div>
                     <div class='col_b' id='SH_116800_b'>
-                        <select required id='FF_116800' name='FF_116800'  onchange='follow_select(this)'><option value=''></option><option value='0 = überhaupt nicht' <?php if (($form_data_a[116800] ?? '') == '0 = überhaupt nicht') echo 'selected'; ?>>0 = überhaupt nicht</option><option value='1' <?php if (($form_data_a[116800] ?? '') == '1') echo 'selected'; ?>>1</option><option value='2' <?php if (($form_data_a[116800] ?? '') == '2') echo 'selected'; ?>>2</option><option value='3' <?php if (($form_data_a[116800] ?? '') == '3') echo 'selected'; ?>>3</option><option value='4' <?php if (($form_data_a[116800] ?? '') == '4') echo 'selected'; ?>>4</option><option value='5' <?php if (($form_data_a[116800] ?? '') == '5') echo 'selected'; ?>>5</option><option value='6' <?php if (($form_data_a[116800] ?? '') == '6') echo 'selected'; ?>>6</option><option value='7' <?php if (($form_data_a[116800] ?? '') == '7') echo 'selected'; ?>>7</option><option value='8' <?php if (($form_data_a[116800] ?? '') == '8') echo 'selected'; ?>>8</option><option value='9' <?php if (($form_data_a[116800] ?? '') == '9') echo 'selected'; ?>>9</option><option value='10 = sehr stark' <?php if (($form_data_a[116800] ?? '') == '10 = sehr stark') echo 'selected'; ?>>10 = sehr stark</option>
-                        </select>
+                        <input data-fg='10010' required type='text' id='FF_116800' name='FF_116800' value="<?php echo htmlspecialchars($form_data_a[116800] ?? ''); ?>" placeholder=''>
                     </div>
 					
                     <div class='col_a' id='SH_116900_a'>
                         <div class='desc_f' ><table class='td_num'><tr><td>3.</td><td>Haben Sie sich wegern Ihrer Darmerkrankung Sorgen gemacht? </td></tr></table></div>
                     </div>
                     <div class='col_b' id='SH_116900_b'>
-                        <select required id='FF_116900' name='FF_116900'  onchange='follow_select(this)'><option value=''></option><option value='0 = überhaupt nicht' <?php if (($form_data_a[116900] ?? '') == '0 = überhaupt nicht') echo 'selected'; ?>>0 = überhaupt nicht</option><option value='1' <?php if (($form_data_a[116900] ?? '') == '1') echo 'selected'; ?>>1</option><option value='2' <?php if (($form_data_a[116900] ?? '') == '2') echo 'selected'; ?>>2</option><option value='3' <?php if (($form_data_a[116900] ?? '') == '3') echo 'selected'; ?>>3</option><option value='4' <?php if (($form_data_a[116900] ?? '') == '4') echo 'selected'; ?>>4</option><option value='5' <?php if (($form_data_a[116900] ?? '') == '5') echo 'selected'; ?>>5</option><option value='6' <?php if (($form_data_a[116900] ?? '') == '6') echo 'selected'; ?>>6</option><option value='7' <?php if (($form_data_a[116900] ?? '') == '7') echo 'selected'; ?>>7</option><option value='8' <?php if (($form_data_a[116900] ?? '') == '8') echo 'selected'; ?>>8</option><option value='9' <?php if (($form_data_a[116900] ?? '') == '9') echo 'selected'; ?>>9</option><option value='10 = sehr' <?php if (($form_data_a[116900] ?? '') == '10 = sehr') echo 'selected'; ?>>10 = sehr</option>
-                        </select>
+                        <input data-fg='10010' required type='text' id='FF_116900' name='FF_116900' value="<?php echo htmlspecialchars($form_data_a[116900] ?? ''); ?>" placeholder=''>
                     </div>
 					
                     <div class='col_a' id='SH_117000_a'>
                         <div class='desc_f' ><table class='td_num'><tr><td>4.</td><td>Wie war Ihr allgemeines Wohlbefinden?</td></tr></table></div>
                     </div>
                     <div class='col_b' id='SH_117000_b'>
-                        <select required id='FF_117000' name='FF_117000'  onchange='follow_select(this)'><option value=''></option><option value='0 = augezeichnet' <?php if (($form_data_a[117000] ?? '') == '0 = augezeichnet') echo 'selected'; ?>>0 = augezeichnet</option><option value='1' <?php if (($form_data_a[117000] ?? '') == '1') echo 'selected'; ?>>1</option><option value='2' <?php if (($form_data_a[117000] ?? '') == '2') echo 'selected'; ?>>2</option><option value='3' <?php if (($form_data_a[117000] ?? '') == '3') echo 'selected'; ?>>3</option><option value='4' <?php if (($form_data_a[117000] ?? '') == '4') echo 'selected'; ?>>4</option><option value='5' <?php if (($form_data_a[117000] ?? '') == '5') echo 'selected'; ?>>5</option><option value='6' <?php if (($form_data_a[117000] ?? '') == '6') echo 'selected'; ?>>6</option><option value='7' <?php if (($form_data_a[117000] ?? '') == '7') echo 'selected'; ?>>7</option><option value='8' <?php if (($form_data_a[117000] ?? '') == '8') echo 'selected'; ?>>8</option><option value='9' <?php if (($form_data_a[117000] ?? '') == '9') echo 'selected'; ?>>9</option><option value='10 = sehr schlecht' <?php if (($form_data_a[117000] ?? '') == '10 = sehr schlecht') echo 'selected'; ?>>10 = sehr schlecht</option>
-                        </select>
+                        <input data-fg='10010' required type='text' id='FF_117000' name='FF_117000' value="<?php echo htmlspecialchars($form_data_a[117000] ?? ''); ?>" placeholder=''>
                     </div>
 			</fieldset>
 			<fieldset id='FS_444101'><legend>Anamnestische Angaben</legend>
@@ -629,14 +625,14 @@ require_once MIQ_ROOT . "/modules/form_base/form_start.php";
                         <div class='desc_f' >Wie viele Tage (ungefähr) waren Sie aufgrund der CU arbeitsunfähig im letzten Jahr?</div>
                     </div>
                     <div class='col_b ' id='SH_20210_b'>
-                        <input  type='number' id='FF_20210' name='FF_20210' value="<?php echo htmlspecialchars($form_data_a[20210] ?? ''); ?>" min='0' max='100' step='1' placeholder='Tage'>
+                        <input required type='number' id='FF_20210' name='FF_20210' value="<?php echo htmlspecialchars($form_data_a[20210] ?? ''); ?>" min='0' max='100' step='1' placeholder='Tage'>
                     </div>
 					
                     <div class='col_a ' id='SH_20211_a'>
                         <div class='desc_f' >Wie viele Tage waren Sie im Krankenhaus stationär aufgenommen im letzten Jahr?</div>
                     </div>
                     <div class='col_b ' id='SH_20211_b'>
-                        <input  type='number' id='FF_20211' name='FF_20211' value="<?php echo htmlspecialchars($form_data_a[20211] ?? ''); ?>" min='0' max='100' step='1' placeholder=''>
+                        <input required type='number' id='FF_20211' name='FF_20211' value="<?php echo htmlspecialchars($form_data_a[20211] ?? ''); ?>" min='0' max='100' step='1' placeholder=''>
                     </div>
 			</fieldset>
 			<fieldset id='FS_'><legend>Adverse Events / Komplikatonen</legend>

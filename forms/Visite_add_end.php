@@ -22,7 +22,7 @@
     param_a['ext_fcid'] = "<?php echo $form_data_a[$_SESSION['param']['ext_fcid']] ?? "" ?>";
     param_a['geschlecht'] = "<?php echo $form_data_a[$_SESSION['param']['geschlecht']] ?? "" ?>";
     param_a['therapy'] = "<?php echo $form_data_a[$_SESSION['param']['therapy']] ?? "" ?>";
-    param_a['first_visit'] = "<?php echo $form_data_a[$_SESSION['param']['first_visit']] ?? "" ?>";
+    param_a['visite_week'] = "<?php echo $form_data_a[$_SESSION['param']['visite_week']] ?? "" ?>";
     param_a['visite'] = "<?php echo $fcid ?? "" ?>";
     param_a['visite_datum'] = "<?php echo $form_data_a[10005020] ?? "" ?>";
     const param_str = JSON.stringify(param_a);
@@ -37,8 +37,17 @@
     const submit_button = document.getElementById('main_form_submit_button');
     const dashboard = document.getElementById('dashboard_visite');
     const tdSidebar = document.getElementById('<?php echo $fg ?>_td_sidebar');
-    // const last_visit = <?php echo json_encode($last_visit ?? "") ?>;
 
+    const visite_week_a = <?php echo json_encode($visite_week_a); ?>;
+    const currentValue = visite_week.value;
+    for (let i = visite_week.options.length - 1; i >= 0; i--) {
+        const optionText = visite_week.options[i].text;
+        const optionValue = visite_week.options[i].value;
+        // Nur entfernen, wenn es NICHT die aktuell ausgewählte Option ist
+        if (visite_week_a.includes(optionText) && optionValue !== currentValue) {
+            visite_week.remove(i);
+        }
+    }
 
     const visite_span = document.getElementById('SP_10005021');
     visite_span.style.fontSize = '16px';
@@ -46,9 +55,9 @@
     const date_span = document.getElementById('SP_10005020');
     date_span.style.fontSize = '16px';
     date_span.style.marginTop = "2px";
-    
-    
-    
+
+
+
 
     const print_button = document.getElementById('print_button');
     if (print_button) print_button.style.display = 'none';
@@ -56,8 +65,6 @@
     if (dashboard && tdSidebar) {
         tdSidebar.appendChild(dashboard);
     }
-   
-
 
     var background_field_save = 1;
     if (visite_date.value && visite_week.value) {
@@ -65,6 +72,8 @@
         document.getElementById('main_tab').style.marginTop = '0px';
         background_field_save = 1;
         submit_button.style.display = 'none';
+        visite_date.readOnly = true;
+        visite_week.disabled = true;
     }
 
     if (visite_date) {
@@ -95,7 +104,7 @@
     const menue_height = window.top.document.getElementById('main_menue').offsetHeight;
     const main_win_height = window.top.innerHeight - menue_height;
     work_frame.style.height = (main_win_height - 160) + 'px';
-    
+
     if (visite_date.value && visite_week.value) work_frame.src = "<?php echo $_SESSION["WEBROOT"] . $_SESSION["PROJECT_PATH"] ?>forms/Patientenfragebogen.php?fg=10010&fcid=" + param_a['visite'] + "&param_str=" + btoa(encodeURIComponent(param_str));
     // document.addEventListener('DOMContentLoaded', (event) => {
 
@@ -150,7 +159,4 @@
 
     //     // work_frame.style.height = (main_win_height - 160) + 'px';
     // });
-    
-
-    
 </script>

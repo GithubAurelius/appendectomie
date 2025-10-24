@@ -1,36 +1,60 @@
 <?php
 
-$this_fcid = $form_data_a[$_SESSION['param']['pid']] ?? "";
-// if (isset($form_data_a[$_SESSION['param']['pid']])) 
-//     $visit_a = get_visits($db, $form_data_a[$_SESSION['param']['pid']], $fcid);
-// else 
-//     $visit_a = [];
-
- 
-// Nur für Visite Anzeige im Dashbaord: Achtung einfacher Übertrag nach unten funktioniert nicht
-
-
-// params
-if (!isset($form_data_a[$_SESSION['param']['pid']]) || $form_data_a[$_SESSION['param']['pid']] ==''){
-    $form_data_a[$_SESSION['param']['pid']] = $param_a['pid'];
-    $form_data_a[$_SESSION['param']['praxis_pid']] = $param_a['praxis_pid'];
-    $form_data_a[$_SESSION['param']['ext_fcid']] = $param_a['ext_fcid'];
-    $form_data_a[$_SESSION['param']['geschlecht']] = $param_a['geschlecht'];
-    $form_data_a[$_SESSION['param']['therapy']] = $param_a['therapy']; 
-    $form_data_a[93] = json_encode($fcid ?? ""); // Nice to have - not nessecary 
+function get_visits($db, $pid)
+{
+    $query = "SELECT fcid FROM forms_10005 WHERE fid=90 AND fcont='" . $pid . "' ORDER BY fcid;";
+    // echo $query;
+    $stmt = $db->prepare($query);
+    $stmt->execute();
+    $res_a = $stmt->fetchAll(PDO::FETCH_COLUMN);
+    return $res_a;
 }
 
-$form_data_a[$_SESSION['param']['first_visit']] = $form_data_a[10005021] ?? "";
+function get_weeks($db, $fcid_str)
+{
+    $query = "SELECT fcont FROM forms_10005 WHERE fid=10005021 AND fcid IN(". $fcid_str.")";
+    // echo $query;
+    $stmt = $db->prepare($query);
+    $stmt->execute();
+    $res_a = $stmt->fetchAll(PDO::FETCH_COLUMN);
+    return $res_a;
+}
+
+$pid = $form_data_a[$_SESSION['param']['pid']] ?? "";
+if (!$pid) $pid = $param_a['pid'];
+
+$week_a = [];
+if ($pid){
+    $visit_a = get_visits($db, $pid); 
+    if (count($visit_a) > 0) $visite_week_a = get_weeks($db, implode(',',$visit_a)); 
+}
 
 
-// echo "<pre>"; echo print_r($form_data_a); echo "</pre>"; 
-
+// params from patient
+if ($param_a){
+    // new data
+    // add here what you need for new data
+} else {
+    // exisiting data (if patient data was changed)
+    $param_name_a = array_flip($_SESSION['param']);
+    $param_fid_str = implode(',', $_SESSION['param']);
+    $param_a['pid'] = $pid;
+    $temp_pat_a = get_query_data($db, 'forms_10003', 'fcid='.$pid.' AND fid IN (' . $param_fid_str . ')');
+    foreach ($temp_pat_a as $index => $field_a) $param_a[$param_name_a[$field_a['fid']]] = $field_a['fcont'];
+}
+// echo "<pre>"; echo print_r($param_a); echo "</pre>";
+$form_data_a[$_SESSION['param']['pid']] = $param_a['pid'];
+$form_data_a[$_SESSION['param']['praxis_pid']] = $param_a['praxis_pid'];
+$form_data_a[$_SESSION['param']['ext_fcid']] = $param_a['ext_fcid'];
+$form_data_a[$_SESSION['param']['geschlecht']] = $param_a['geschlecht'];
+$form_data_a[$_SESSION['param']['therapy']] = $param_a['therapy']; 
 
 // fieldset var
 $praxis_id = $form_data_a[$_SESSION['param']['praxis_pid']] ?? "";
-$cedur_id   = $form_data_a[$_SESSION['param']['ext_fcid']] ?? "";
+$ext_fcid   = $form_data_a[$_SESSION['param']['ext_fcid']] ?? "";
+$sex = $form_data_a[$_SESSION['param']['geschlecht']] ?? ""; 
 $praxis_id = "&nbsp;&nbsp;&nbsp; <img height='16px' src='../images/patient.svg'> Pat.Nr.: ".$praxis_id;
-$praxis_id = $praxis_id ." (".$cedur_id.")";
+$praxis_id = $praxis_id ." (".$ext_fcid."), ".$sex;
 
 // header
 $new_header = $form_data_a[$_SESSION['param']['praxis_pid']] ?? "";
