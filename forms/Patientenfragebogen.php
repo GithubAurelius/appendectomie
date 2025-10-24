@@ -157,7 +157,7 @@ require_once MIQ_ROOT . "/modules/form_base/form_start.php";
                     </div>
 					
                     <div class='col_a' id='SH_20560_a'>
-                        <div class='desc_f' >Selbstwahrnehmung des Patienten zum Allgemeinszustand:</div>
+                        <div class='desc_f' >Selbstwahrnehmung des Patienten zum Allgemeinzustand:</div>
                     </div>
                     <div class='col_b' id='SH_20560_b'>
                         <select required id='FF_20560' name='FF_20560'  onchange='follow_select(this)'><option value=''></option><option value='verschlechtert' <?php if (($form_data_a[20560] ?? '') == 'verschlechtert') echo 'selected'; ?>>verschlechtert</option><option value='gleichbleibend' <?php if (($form_data_a[20560] ?? '') == 'gleichbleibend') echo 'selected'; ?>>gleichbleibend</option><option value='gebessert' <?php if (($form_data_a[20560] ?? '') == 'gebessert') echo 'selected'; ?>>gebessert</option>

@@ -16,7 +16,7 @@ id;type;name;options;required
 
 ;start_fieldset;Untersuchung;;
     20115;radio_cb;<strong>Klinische Vorstellung durchgeführt?</strong>:;;required
-    20560;select;Selbstwahrnehmung des Patienten zum Allgemeinszustand:;verschlechtert|gleichbleibend|gebessert;required
+    20560;select;Selbstwahrnehmung des Patienten zum Allgemeinzustand:;verschlechtert|gleichbleibend|gebessert;required
 
 ;stop_fieldset;;  
 
