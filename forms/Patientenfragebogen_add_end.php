@@ -278,7 +278,7 @@
         document.getElementById('FS_444104').style.display = 'none'; // Histologie
         document.getElementById('FS_444105').style.display = 'none'; // Short Health Scale (SHS)
         document.getElementById('FS_444106').style.display = 'none'; // Montreal Klassifikation
-        document.getElementById('FS_444100').getElementsByTagName('legend')[0].innerHTML = 'Parieller MAYO-Score';
+        document.getElementById('FS_444100').getElementsByTagName('legend')[0].innerHTML = 'Partieller MAYO-Score';
     }
     if (visite_week == 'Woche 24') {
         document.getElementById('FS_444106').style.display = 'none'; // Montreal Klassifikation

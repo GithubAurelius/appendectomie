@@ -28,12 +28,12 @@ function get_last_visite($visits_a, $fcid)
 
 $helper = $_REQUEST['helper'] ?? ($_POST['helper'] ?? "");
 
-$user_is_patient = 0;
-$param_from_session_a = $_SESSION['temp_params_a'] ?? [];
-if (count($param_from_session_a)) {
-    $param_a = $_SESSION['temp_params_a'];
-    $user_is_patient = 1;
-}
+// $user_is_patient = 0;
+// $param_from_session_a = $_SESSION['temp_params_a'] ?? [];
+// if (count($param_from_session_a)) {
+//     $param_a = $_SESSION['temp_params_a'];
+//     $user_is_patient = 1;
+// }
     
  
 // echo "<pre>"; echo print_r($param_a); echo "</pre>"; 
