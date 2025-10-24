@@ -44,7 +44,7 @@ if (count($param_a)>0){
     $temp_pat_a = get_query_data($db, 'forms_10003', 'fcid='.$pid.' AND fid IN (' . $param_fid_str . ')');
     foreach ($temp_pat_a as $index => $field_a) $param_a[$param_name_a[$field_a['fid']]] = $field_a['fcont'];
 }
-echo "<pre>"; echo print_r($param_a); echo "</pre>";
+// echo "<pre>"; echo print_r($param_a); echo "</pre>";
 $form_data_a[$_SESSION['param']['pid']] = $param_a['pid'];
 $form_data_a[$_SESSION['param']['praxis_pid']] = $param_a['praxis_pid'];
 $form_data_a[$_SESSION['param']['ext_fcid']] = $param_a['ext_fcid'];
