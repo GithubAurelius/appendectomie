@@ -29,9 +29,9 @@ if ($pid){
     if (count($visit_a) > 0) $visite_week_a = get_weeks($db, implode(',',$visit_a)); 
 }
 
-
 // params from patient
-if ($param_a){
+if (!isset($param_a)) $param_a = []; // Init for POST
+if (count($param_a)>0){
     // new data
     // add here what you need for new data
     // echo "<pre>"; echo print_r($param_a); echo "</pre>";
