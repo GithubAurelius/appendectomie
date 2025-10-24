@@ -16,19 +16,19 @@ id;type;name;options;required
 
 ;start_fieldset;Untersuchung;;
     20115;radio_cb;<strong>Klinische Vorstellung durchgeführt?</strong>:;;required
-    20560;select;Selbstwahrnehmung des Patienten zum Allgemeinszustand:;verschlechtert|gleichbleibend|gebessert;required
+    20560;select;Selbstwahrnehmung des Patienten zum Allgemeinzustand:;verschlechtert|gleichbleibend|gebessert;required
 
 ;stop_fieldset;;  
 
 ;start_fieldset;Labor;;
-    20570;pair_numb_sel_1;CRP;0|100|0.1;
+    20570;pair_numb_sel_1;CRP;0|100|0.1;required
 	20580;pair_text_sel_2;;mg/l|mg/dl;;	
-    20590;pair_numb_sel_1;Calprotectin;0|300|1;
+    20590;pair_numb_sel_1;Calprotectin;0|300|1;required
 	20600;pair_text_sel_2;;μg/g|mg/kg;;
-	20610;pair_numb_sel_1;Hämoglobin;0|30|0.1;
+	20610;pair_numb_sel_1;Hämoglobin;0|30|0.1;required
     20620;pair_text_sel_2;;g/dl|g/l|mmol/l;;
-    20627;radio_cb;Standlabor (Basiswerte) wurde durchgeführt?;
-    20561;radio_cb;Bakterielle Untersuchung Stuhl durchgeführt und keine Patogene;;
+    20627;radio_cb;Standlabor (Basiswerte) wurde durchgeführt?;;required
+    20561;radio_cb;Bakterielle Untersuchung Stuhl durchgeführt und keine Patogene;;required
 ;stop_fieldset;;  
 
 ;start_fieldset;Medikamentenanamnese;;
@@ -70,10 +70,10 @@ id;type;name;options;required
 ;stop_fieldset;; 
    
 ;start_fieldset;Begleiterkrankungen;;
-     111200;radio_cb;Gibt es aktuelle Begleiterkrankungen?;Ja|Nein;required
+     111200;radio_cb;Gibt es aktuelle Begleiterkrankungen?;Ja|Nein;
     ;start_block;Ja;111200;  
         ;start_row;;;
-            111301;select_mt;@10@➥ Bitte wählen Sie die Erkrankungen;Asthma bronchiale|chronische Lebererkrankung|chronische Lungenerkrankung|Diabetes mellitus|Entzündungen der Nase und des Rachens (Nasopharyngitis)|Hypertonie|KHK|Lungenentzündung (Pneumonie)|Multiple Sklerose|Psoriasis|psychische Erkrankung|rheumatische Erkrankung|Schilddrüsenerkrankung|Z.n. Venenthrombose;
+            111301;select_mt;@10@➥ Bitte wählen Sie die Erkrankungen;Asthma bronchiale|chronische Lebererkrankung|chronische Lungenerkrankung|Diabetes mellitus|Entzündungen der Nase und des Rachens (Nasopharyngitis)|Hypertonie|KHK|Lungenentzündung (Pneumonie)|Multiple Sklerose|Psoriasis|psychische Erkrankung|rheumatische Erkrankung|Schilddrüsenerkrankung|Z.n. Venenthrombose;required
             20500;textarea_1;@30@ andere Infektion(en), falls nicht in der Liste:;3;
             20520;textarea_1;@30@ andere Erkrankung(en), falls nicht in der Liste:;3;
         ;end_row;; 
@@ -83,14 +83,14 @@ id;type;name;options;required
 
 
 444103;start_fieldset;Ultraschall;;
-    201540;number;Maximaler Aussendurchmesser|in mm;0|1000|1;
-    201550;number;Wanddicke|in mm;0|1000|1;
+    201540;number;Maximaler Aussendurchmesser|in mm;0|1000|1;required
+    201550;number;Wanddicke|in mm;0|1000|1;required
     ;info_100;<center><b>Hinweis</b>: Entsprechend den Angaben im Flow Chart. Kopie des Originalbefundes in die Dokumentation inkl. der gewünschten Fotos</center>;;
 ;stop_fieldset;;
 
 444104;start_fieldset;Histologie;;
-    201976;select;Allgemeine Beurteilung;Grad I (keine Entzündung)|Grad II (moderate Entzündung)|Grad III (schwere Entzündung/ Komplikationen);
-    201977;select;Histologie aus dem Sigma - Beurteilung nach dem Nancy-Index (siehe Histologiebefund);1|2|3|4;
+    201976;select;Beurteilung Appendix;Grad I (keine Entzündung)|Grad II (moderate Entzündung)|Grad III (schwere Entzündung/ Komplikationen);required
+    201977;select;Histologie aus dem Sigma - Beurteilung nach dem Nancy-Index (siehe Histologiebefund);1|2|3|4;required
     ;info_100;<center><b>Hinweis</b>: Kopie des Originalbefundes in die Dokumentation</center>;;
 ;stop_fieldset;;
 
@@ -98,12 +98,12 @@ id;type;name;options;required
 444100;start_fieldset;MAYO-Score;;
     20116;select;Stuhfrequenz pro Tag;normal|1-2 Stühle|3-4 Stühle|>5 Stühle;required
     20117;select;Rektaler Blutabgang;kein Blut|Blutstreifen bei weniger als 50% der Stühle|Deutliche Blutbeimengung meistens|Auch Blut ohne Stuhl;required
-    20118;select;Endoskopischer Befund;normaler Befund oder inaktive Erkrankung|milde Colitis (Erythem, leicht spröde Schleimhaut)|moderate Colitis (deutliches Erythem, Erosionen, Gefässmuster verschwunden)|schwere Colitis (Ulzerationen, spontane Blutungen);
+    20118;select;Endoskopischer Befund;normaler Befund oder inaktive Erkrankung|milde Colitis (Erythem, leicht spröde Schleimhaut)|moderate Colitis (deutliches Erythem, Erosionen, Gefässmuster verschwunden)|schwere Colitis (Ulzerationen, spontane Blutungen);required
     20119;select;Globale Beurteilung des Arztes;normal|milde Erkrankung|moderate Erkrankung|schwere Erkrankung;required
 ;stop_fieldset;;
 
 444106;start_fieldset;Montreal Klassifikation;;
-    20540;select;Ausbreitung;E1 - Ulcerative Proktitis (Befall nur auf das Rektum beschränkt)|E2 - Linksseitige Colitis (Befall beschränkt auf den Enddarm bis zum Milzbogen)|E3 - Pankolitis (Beteiligung über den Milzbogen hinaus);;
+    20540;select;Ausbreitung;E1 - Ulcerative Proktitis (Befall nur auf das Rektum beschränkt)|E2 - Linksseitige Colitis (Befall beschränkt auf den Enddarm bis zum Milzbogen)|E3 - Pankolitis (Beteiligung über den Milzbogen hinaus);required
 ;stop_fieldset;;  
 
 444102;start_fieldset;Extraintestinale Manifestation;;
@@ -119,10 +119,10 @@ id;type;name;options;required
 
 
 444105;start_fieldset;Short Health Scale (SHS) - Befinden der letzten 7 Tage;
-    116700;select;<table class='td_num'><tr><td>1.</td><td>Hatten Sie Beschwerden aufgrund Ihrer Darmerkrankung?</td></tr></table>;0 = keine Beschwerden|1|2|3|4|5|6|7|8|9|10 = sehr starke Beschwerden
-    116800;select;<table class='td_num'><tr><td>2.</td><td>Hat sich Ihre Darmerkrankung auf Ihre Fähigkeit ausgewirkt, alles zu schaffen, was Sie im Leben tun mussten oder tun wollten?</td></tr></table>;0 = überhaupt nicht|1|2|3|4|5|6|7|8|9|10 = sehr stark;required
-    116900;select;<table class='td_num'><tr><td>3.</td><td>Haben Sie sich wegern Ihrer Darmerkrankung Sorgen gemacht? </td></tr></table>;0 = überhaupt nicht|1|2|3|4|5|6|7|8|9|10 = sehr;required
-    117000;select;<table class='td_num'><tr><td>4.</td><td>Wie war Ihr allgemeines Wohlbefinden?</td></tr></table>;0 = augezeichnet|1|2|3|4|5|6|7|8|9|10 = sehr schlecht;required
+    116700;text;<table class='td_num'><tr><td>1.</td><td>Hatten Sie Beschwerden aufgrund Ihrer Darmerkrankung?</td></tr></table>;;required
+    116800;text;<table class='td_num'><tr><td>2.</td><td>Hat sich Ihre Darmerkrankung auf Ihre Fähigkeit ausgewirkt, alles zu schaffen, was Sie im Leben tun mussten oder tun wollten?</td></tr></table>;;required
+    116900;text;<table class='td_num'><tr><td>3.</td><td>Haben Sie sich wegern Ihrer Darmerkrankung Sorgen gemacht? </td></tr></table>;;required
+    117000;text;<table class='td_num'><tr><td>4.</td><td>Wie war Ihr allgemeines Wohlbefinden?</td></tr></table>;;required
 ;stop_fieldset;;;
 
 
@@ -154,8 +154,8 @@ id;type;name;options;required
             ;stop_block;;
         ;stop_block;;
     
-    20210;number;Wie viele Tage (ungefähr) waren Sie aufgrund der CU arbeitsunfähig im letzten Jahr?|Tage;0|100|1;
-    20211;number;Wie viele Tage waren Sie im Krankenhaus stationär aufgenommen im letzten Jahr?;0|100|1;
+    20210;number;Wie viele Tage (ungefähr) waren Sie aufgrund der CU arbeitsunfähig im letzten Jahr?|Tage;0|100|1;required
+    20211;number;Wie viele Tage waren Sie im Krankenhaus stationär aufgenommen im letzten Jahr?;0|100|1;required
         20220;checkbox_base_r;Zurzeit nicht in bezahlter Arbeit tätig;;required
 
 ;stop_fieldset;;      
