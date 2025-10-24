@@ -241,7 +241,7 @@
     // const status = <?php echo json_encode($status) ?>;
     // const pre_visite = <?php echo json_encode($pre_visite ?? "") ?>;
     // const pre_data_json_str = <?php echo json_encode($pre_data_json ?? "") ?>;
-    // const user_is_patient = <?php echo json_encode($user_is_patient); ?>;
+    
     const pid = <?php echo json_encode($form_data_a[$_SESSION['param']['pid']]); ?>;
     const fcid = <?php echo json_encode($fcid); ?>;
     const visite = <?php echo json_encode($form_data_a[$_SESSION['param']['visite']]) ?>;

@@ -31,7 +31,7 @@ if ($pid){
 
 
 // params from patient
-if (isset($param_a)){
+if ($param_a){
     // new data
     // add here what you need for new data
     // echo "<pre>"; echo print_r($param_a); echo "</pre>";
@@ -44,7 +44,7 @@ if (isset($param_a)){
     $temp_pat_a = get_query_data($db, 'forms_10003', 'fcid='.$pid.' AND fid IN (' . $param_fid_str . ')');
     foreach ($temp_pat_a as $index => $field_a) $param_a[$param_name_a[$field_a['fid']]] = $field_a['fcont'];
 }
-
+echo "<pre>"; echo print_r($param_a); echo "</pre>";
 $form_data_a[$_SESSION['param']['pid']] = $param_a['pid'];
 $form_data_a[$_SESSION['param']['praxis_pid']] = $param_a['praxis_pid'];
 $form_data_a[$_SESSION['param']['ext_fcid']] = $param_a['ext_fcid'];
