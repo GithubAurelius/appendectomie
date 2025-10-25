@@ -31,7 +31,9 @@
         SAE_textarea.style.width = SAE_textarea.offsetWidth - 30;
     }
 
-
+    
+    field_in_group_validation('20115', ['Ja'], ['20560'], 'one'); // Klinische Vorstellung
+    
     field_in_group_validation('200270', ['Ja'], ['200271', '200272', '200273'], 'one'); // Chronisch (Prednison/Prednisolon)
     field_in_group_validation('200470', ['Ja'], ['200471', '200472'], 'one'); // Chronisch (Budesonid)
     field_in_group_validation('200670', ['Ja'], ['200671', '200672'], 'one'); // Mesalazin - Chronisch (Budesonid)
