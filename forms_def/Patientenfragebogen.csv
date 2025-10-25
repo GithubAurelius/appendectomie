@@ -16,8 +16,11 @@ id;type;name;options;required
 
 ;start_fieldset;Untersuchung;;
     20115;radio_cb;<strong>Klinische Vorstellung durchgeführt?</strong>:;;required
-    20560;select;Selbstwahrnehmung des Patienten zum Allgemeinzustand:;verschlechtert|gleichbleibend|gebessert;required
-
+    ;start_block;Ja;20115;
+        ;start_row;;
+            20560;select;Selbstwahrnehmung des Patienten zum Allgemeinzustand:;verschlechtert|gleichbleibend|gebessert;required
+        ;end_row;;
+    ;stop_block;;
 ;stop_fieldset;;  
 
 ;start_fieldset;Labor;;
@@ -32,15 +35,15 @@ id;type;name;options;required
 ;stop_fieldset;;  
 
 ;start_fieldset;Medikamentenanamnese;;
-    200071;radio_cb;Glukokortikoide  Prednison/Prednisolon/Budesonid?;Ja|Nein|Unbekannt;required
-    ;start_block;Ja;200071;
+    200070;radio_cb;Glukokortikoide  Prednison/Prednisolon/Budesonid?;Ja|Nein|Unbekannt;required
+    ;start_block;Ja;200070;
         ;start_row;;
             200270;radio_cb;@10@➥ Chronisch (Prednison/Prednisolon);
             ;start_block;Ja;200270;
                 ;start_row;;
                     200271;select;@30@ ≥ 20mg ≥ 3 Monate;Ja|Nein|Unbekannt;
-                    200372;select;@30@ ≥ 10 mg ≥ 3 Monate;Ja|Nein|Unbekannt;
-                    200373;select;@30@ ≥ 5 mg ≥ 3 Monate ;Ja|Nein|Unbekannt;
+                    200272;select;@30@ ≥ 10 mg ≥ 3 Monate;Ja|Nein|Unbekannt;
+                    200273;select;@30@ ≥ 5 mg ≥ 3 Monate ;Ja|Nein|Unbekannt;
                 ;end_row;;
             ;stop_block;;
         ;end_row;;
@@ -49,7 +52,7 @@ id;type;name;options;required
             ;start_block;Ja;200470;
                 ;start_row;;
                     200471;select;@30@ oral ≥ 6 mg ≥ 3 Monate;Ja|Nein|Unbekannt;
-                    200572;select;@30@ rektal ≥ 2 mg ≥ 3 Monate;Ja|Nein|Unbekannt;
+                    200472;select;@30@ rektal ≥ 2 mg ≥ 3 Monate;Ja|Nein|Unbekannt;
                ;end_row;;
             ;stop_block;;
         ;end_row;;
@@ -58,7 +61,7 @@ id;type;name;options;required
             ;start_block;Ja;200670;
                 ;start_row;;
                     200671;select;@30@ oral ≥ 2g ≥ 3 Monate;Ja|Nein|Unbekannt;
-                    200772;select;@30@  ≥ 1g ≥ 3 Monate;Ja|Nein|Unbekannt;
+                    200672;select;@30@  ≥ 1g ≥ 3 Monate;Ja|Nein|Unbekannt;
                 ;end_row;;
             ;stop_block;;
         ;end_row;;
@@ -154,7 +157,6 @@ id;type;name;options;required
             ;stop_block;;
         ;stop_block;;
     
-    20210;number;Wie viele Tage (ungefähr) waren Sie aufgrund der CU arbeitsunfähig im letzten Jahr?|Tage;0|100|1;required
     20211;number;Wie viele Tage waren Sie im Krankenhaus stationär aufgenommen im letzten Jahr?;0|100|1;required
         20220;checkbox_base_r;Zurzeit nicht in bezahlter Arbeit tätig;;required
 

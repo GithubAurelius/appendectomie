@@ -488,14 +488,6 @@ require_once MIQ_ROOT . "/modules/form_base/form_start.php";
                         </select>
                     </div>
 					
-                    <div class='col_a' id='SH_20111_a'>
-                        <div class='desc_f' >Höchster allgemeinbildender Schulabschluss:</div>
-                    </div>
-                    <div class='col_b' id='SH_20111_b'>
-                        <select required id='FF_20111' name='FF_20111'  onchange='follow_select(this)'><option value=''></option><option value='noch keinen Schulabschluss' <?php if (($form_data_a[20111] ?? '') == 'noch keinen Schulabschluss') echo 'selected'; ?>>noch keinen Schulabschluss</option><option value='Schule beendet ohne Schulabschluss' <?php if (($form_data_a[20111] ?? '') == 'Schule beendet ohne Schulabschluss') echo 'selected'; ?>>Schule beendet ohne Schulabschluss</option><option value='Realschulabschluss/ mittlere Reife (neu: mittlerer Schulabschluss/ MSA)' <?php if (($form_data_a[20111] ?? '') == 'Realschulabschluss/ mittlere Reife (neu: mittlerer Schulabschluss/ MSA)') echo 'selected'; ?>>Realschulabschluss/ mittlere Reife (neu: mittlerer Schulabschluss/ MSA)</option><option value='Haupt-/ Volksschulabschluss (neu: erster allgemeinbildender Schulabschluss/ ESA)' <?php if (($form_data_a[20111] ?? '') == 'Haupt-/ Volksschulabschluss (neu: erster allgemeinbildender Schulabschluss/ ESA)') echo 'selected'; ?>>Haupt-/ Volksschulabschluss (neu: erster allgemeinbildender Schulabschluss/ ESA)</option><option value='POS (Polytechnische Oberschule) bzw. 10. Klasse' <?php if (($form_data_a[20111] ?? '') == 'POS (Polytechnische Oberschule) bzw. 10. Klasse') echo 'selected'; ?>>POS (Polytechnische Oberschule) bzw. 10. Klasse</option><option value='Fachhochschulreife/ Fachoberschule' <?php if (($form_data_a[20111] ?? '') == 'Fachhochschulreife/ Fachoberschule') echo 'selected'; ?>>Fachhochschulreife/ Fachoberschule</option><option value='Abitur, allgemeine oder fachgebundene Hochschulreife' <?php if (($form_data_a[20111] ?? '') == 'Abitur, allgemeine oder fachgebundene Hochschulreife') echo 'selected'; ?>>Abitur, allgemeine oder fachgebundene Hochschulreife</option><option value='Anderen Schulabschluss (z.B. im Ausland erworben)' <?php if (($form_data_a[20111] ?? '') == 'Anderen Schulabschluss (z.B. im Ausland erworben)') echo 'selected'; ?>>Anderen Schulabschluss (z.B. im Ausland erworben)</option><option value='keine Angabe' <?php if (($form_data_a[20111] ?? '') == 'keine Angabe') echo 'selected'; ?>>keine Angabe</option>
-                        </select>
-                    </div>
-					
                     <div class='col_a' id='SH_102200_a'>
                         <div class='desc_f' >Datum der Erstdiagnose</div>
                     </div>

@@ -31,6 +31,17 @@
         SAE_textarea.style.width = SAE_textarea.offsetWidth - 30;
     }
 
+
+    field_in_group_validation('200270', ['Ja'], ['200271', '200272', '200273'], 'one'); // Chronisch (Prednison/Prednisolon)
+    field_in_group_validation('200470', ['Ja'], ['200471', '200472'], 'one'); // Chronisch (Budesonid)
+    field_in_group_validation('200670', ['Ja'], ['200671', '200672'], 'one'); // Mesalazin - Chronisch (Budesonid)
+    field_in_group_validation('111200', ['Ja'], ['111301', '20500', '20520'], 'one'); // Begleiterkrankungen
+    field_in_group_validation('203650', ['Ja'], ['203653', '200360', '200370', '200380'], 'all'); // SAE
+    field_in_group_validation('207652', ['Ja'], ['207653'], 'one'); // SAE
+    field_in_group_validation('201081', ['Ja'], ['201083'], 'one'); // Arzneimittelunverträglichkeiten
+
+    field_in_group_validation('20650', ['Ja'], ['20660', '20670', '20680', '20690'], 'one');
+
     // Plausibilisation
     function extra_plaus(user_is_patient, visite_week) {
 
@@ -91,6 +102,8 @@
                 }
             }
         }
+
+
 
         // // Anamnese
         // field_in_group_validation('102800', ['Ja'], ['103000', '103100', '103200', '103300', '103400'], 'one'); // smoker
@@ -185,63 +198,26 @@
     let param_a = {};
 
 
-
-    try {
-
-        param_a['sqlstr'] = <?php echo json_encode("F_{$_SESSION['param']['pid']} = '{$form_data_a[$_SESSION['param']['pid']]}'"); ?>;
-        param_a['pid'] = <?php echo json_encode($form_data_a[$_SESSION['param']['pid']] ?? ""); ?>;
-        param_a['praxis_pid'] = <?php echo json_encode($form_data_a[$_SESSION['param']['praxis_pid']] ?? ""); ?>;
-        param_a['ext_fcid'] = <?php echo json_encode($form_data_a[$_SESSION['param']['ext_fcid']] ?? ""); ?>;
-        param_a['geschlecht'] = <?php echo json_encode($form_data_a[$_SESSION['param']['geschlecht']] ?? ""); ?>;
-        param_a['therapy'] = <?php echo json_encode($form_data_a[$_SESSION['param']['therapy']] ?? ""); ?>;
-        param_a['visite_week'] = <?php echo json_encode($form_data_a[$_SESSION['param']['visite_week']] ?? ""); ?>;
-        param_a['visite'] = <?php echo json_encode($form_data_a[$_SESSION['param']['visite']] ?? ""); ?>;
-        param_a['visite_datum'] = <?php echo json_encode($form_data_a[10005020] ?? ""); ?>;
-        const param_str = JSON.stringify(param_a);
-
-        // medication frames
-
-        // if (!param_a || typeof param_a['visite_week'] === 'undefined') {
-        //     console.warn('⚠ param_a.visite_week nicht definiert.');
-        // }
+    param_a['sqlstr'] = <?php echo json_encode("F_{$_SESSION['param']['pid']} = '{$form_data_a[$_SESSION['param']['pid']]}'"); ?>;
+    param_a['pid'] = <?php echo json_encode($form_data_a[$_SESSION['param']['pid']] ?? ""); ?>;
+    param_a['praxis_pid'] = <?php echo json_encode($form_data_a[$_SESSION['param']['praxis_pid']] ?? ""); ?>;
+    param_a['ext_fcid'] = <?php echo json_encode($form_data_a[$_SESSION['param']['ext_fcid']] ?? ""); ?>;
+    param_a['geschlecht'] = <?php echo json_encode($form_data_a[$_SESSION['param']['geschlecht']] ?? ""); ?>;
+    param_a['therapy'] = <?php echo json_encode($form_data_a[$_SESSION['param']['therapy']] ?? ""); ?>;
+    param_a['visite_week'] = <?php echo json_encode($form_data_a[$_SESSION['param']['visite_week']] ?? ""); ?>;
+    param_a['visite'] = <?php echo json_encode($form_data_a[$_SESSION['param']['visite']] ?? ""); ?>;
+    param_a['visite_datum'] = <?php echo json_encode($form_data_a[10005020] ?? ""); ?>;
+    const param_str = JSON.stringify(param_a);
 
 
-        // const work_frame_medikation = document.getElementById('medikation');
-        // if (work_frame_medikation) {
-        //     work_frame_medikation.style.height = '80px';
-        //     const query_str = '?medtype=M&param_str=' + btoa(encodeURIComponent(param_str));
-        //     work_frame_medikation.src = '<?php echo $_SESSION['WEBROOT'] . $_SESSION['PROJECT_PATH'] . 'forms/' ?>Medikation_patient_version_vormedikation.php' + query_str;
-        // } else {
-        //     console.warn('⚠ medikation-Frame nicht gefunden.');
-        // }
-
-        // // medication frames dynamic height
-        // window.addEventListener('message', function(event) {
-        //     try {
-        //         if (event.data && event.data.type === 'setHeight' && event.data.frameId) {
-        //             const iframe = document.getElementById(event.data.frameId);
-        //             if (iframe) {
-        //                 const newHeight = Math.min(parseInt(event.data.height, 10) || 0, 1000);
-        //                 iframe.style.height = newHeight + 'px';
-        //             } else {
-        //                 console.warn(`⚠ Frame mit ID "${event.data.frameId}" nicht gefunden.`);
-        //             }
-        //         }
-        //     } catch (msgErr) {
-        //         console.error('❌ Fehler beim Verarbeiten der Message:', msgErr);
-        //     }
-        // });
-
-    } catch (err) {
-        console.error('❌ Fehler im Medication-Frame-Code:', err);
-    }
 
 
     // basic vars 
     // const status = <?php echo json_encode($status) ?>;
     // const pre_visite = <?php echo json_encode($pre_visite ?? "") ?>;
     // const pre_data_json_str = <?php echo json_encode($pre_data_json ?? "") ?>;
-    
+
+    const postetd = <?php echo json_encode($posted) ?>;
     const pid = <?php echo json_encode($form_data_a[$_SESSION['param']['pid']]); ?>;
     const fcid = <?php echo json_encode($fcid); ?>;
     const visite = <?php echo json_encode($form_data_a[$_SESSION['param']['visite']]) ?>;
@@ -304,110 +280,39 @@
         }
     } else warning_new_event.style.display = 'none';
 
-    // const helper = document.getElementById('helper');
-    // const groesse = document.getElementById('FF_102600');
-    // const gewicht = document.getElementById('FF_102700');
-    // const bmi = document.getElementById('FF_102705');
-    // const bmi_info = document.getElementById('span_102705')
-    // const op_field = document.getElementById('FF_106900');
-
-    // const mayo_score = document.getElementById('FF_109001');
-    // const mayo_p_score = document.getElementById('FF_109002');
-    // const ses_score = document.getElementById('FF_109003');
-    // const cdai_score = document.getElementById('FF_109004');
-    // const sidbq_score = document.getElementById('FF_109005');
-    // const promis_score = document.getElementById('FF_109006');
-    // const facit_score = document.getElementById('FF_109007');
-    // const hbi_score = document.getElementById('FF_109008');
-    // const bwl_score = document.getElementById('FF_119000');
-
-    // const sliderContainer = document.querySelector('.slider-container');
-    // sliderContainer.style.width = '90%'; 
-
-    document.addEventListener('DOMContentLoaded', (event) => {
-
-        // console.log('Init DOMContentLoaded');
-        // console.log("STATUS:" + status);
-        // if (status === 'FIRST_INIT' || status === 'FOLLOWUP_INIT') {
-        //     fetchDataAndUpdateForm(fcid, 10010, 10, <?php echo json_encode($_SESSION['m_uid'] ?? "") ?>);
-        //     fetchDataAndUpdateForm(fcid, 10010, 20, <?php echo json_encode($_SESSION['user_group'] ?? "") ?>);
-        //     fetchDataAndUpdateForm(fcid, 10010, 90, pid);
-        //     fetchDataAndUpdateForm(fcid, 10010, 91, param_a['praxis_pid']);
-        //     fetchDataAndUpdateForm(fcid, 10010, 92, param_a['ext_fcid']);
-        //     fetchDataAndUpdateForm(fcid, 10010, 93, visite);
-        //     fetchDataAndUpdateForm(fcid, 10010, 94, visite_week);
-        //     fetchDataAndUpdateForm(fcid, 10010, 95, diagnosis_val);
-        //     fetchDataAndUpdateForm(fcid, 10010, 96, gender_val);
-        //     fetchDataAndUpdateForm(fcid, 10010, 10005020, param_a['visite_datum']);
-        //     // console.log("Patient initialisiert!");
-        //     if (status === 'FOLLOWUP_INIT') {
-        //         const pre_data_json = JSON.parse(pre_data_json_str);
-        //         for (let key in pre_data_json) {
-        //             if (pre_data_json.hasOwnProperty(key)) {
-        //                 // console.log(`Schlüssel: ${key}, Wert: ${pre_data_json[key]}`);
-        //                 fetchDataAndUpdateForm(fcid, 10010, key, pre_data_json[key]);
-        //             }
-        //         }
-        //     }
-        // }
 
 
 
 
-        // Helper-Funktionen
-
-        try {
 
 
-
-            // Checks
-            safeCall(eL_check_numbers);
-            safeCall(eL_check_required_fields);
-
-            // if (!user_is_patient) error_a.FF_0 ??= -1;
-
-            background_field_save = 1;
-            // Background Save
-            try {
-                if (background_field_save) safeCall(background_field_action);
-                // console.log('BGS:' + (background_field_save ? 'activated' : 'off'));
-            } catch (error) {
-                // console.log('background_field_save (INIT):', error);
-            }
-
-
-            // Message Listener
-            window.addEventListener('message', (event) => {
-                if (event.data?.type === 'error_premed_ready' || event.data?.type === 'error_med_ready') {
-                    try {
-                        error_a = {
-                            ...error_a,
-                            ...JSON.parse(event.data.value)
-                        };
-                        // safeCall(c_info);
-                        try {
-                            // c_info();
-                            fetchDataAndUpdateForm(fcid, 10010, 100, JSON.stringify(c_info()));
-                        } catch (err) {
-                            console.error(`❌ Fehler in Funktionsaufruf errorwriting patientenfragebogen`, err);
-                        }
-                    } catch (err) {
-                        console.error('Fehler beim Verarbeiten von error_*_ready:', err);
-                    }
-                }
-            });
+    // Helper-Funktionen
 
 
 
-            // Page Info
-            const i_am = window.location.pathname;
-            const i_am_a = i_am.split('/');
-            // console.log('--- ' + i_am_a[i_am_a.length - 1] + ' --<E');
+
+
+    // Checks
+    safeCall(eL_check_numbers);
+    safeCall(eL_check_required_fields);
+
+    // if (!user_is_patient) error_a.FF_0 ??= -1;
+
+    background_field_save = 1;
+    // Background Save
+    try {
+        if (background_field_save) safeCall(background_field_action);
+        // console.log('BGS:' + (background_field_save ? 'activated' : 'off'));
+    } catch (error) {
+        // console.log('background_field_save (INIT):', error);
+    }
 
 
 
-        } catch (mainErr) {
-            console.warn('❌ Hauptfehler im DOMContentLoaded:', mainErr);
-        }
-    });
+    if (postetd) fetchDataAndUpdateForm(fcid, 10010, 100, JSON.stringify(c_info()));
+
+    // Page Info
+    const i_am = window.location.pathname;
+    const i_am_a = i_am.split('/');
+    // console.log('--- ' + i_am_a[i_am_a.length - 1] + ' --<E');
 </script>

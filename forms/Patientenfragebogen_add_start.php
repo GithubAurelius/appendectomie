@@ -1,7 +1,5 @@
 <?php
 
-
-
 function get_visits($db, $pid)
 {
     $query = "SELECT fcid FROM forms_10005 WHERE fid=90 AND fcont='" . $pid . "' ORDER BY fcid;";
@@ -26,7 +24,11 @@ function get_last_visite($visits_a, $fcid)
     return $prev;
 }
 
+
 $helper = $_REQUEST['helper'] ?? ($_POST['helper'] ?? "");
+
+$posted = 0; // javascript den Zustand mitteilen
+if ($_SERVER['REQUEST_METHOD'] === 'POST') $posted = 1; 
 
 // $user_is_patient = 0;
 // $param_from_session_a = $_SESSION['temp_params_a'] ?? [];

@@ -155,6 +155,8 @@ require_once MIQ_ROOT . "/modules/form_base/form_start.php";
                             <label class='custom-checkbox-wrapper'><span id='CB_20115_Nein' class='custom-checkbox'></span> <span class='custom-checkbox-label'>Nein</span></label>
                         </div>
                     </div>
+			<div class='col_100' ><div id='B_20115_Ja' class='block' style='display:none'>
+				<div class='row'>
 					
                     <div class='col_a' id='SH_20560_a'>
                         <div class='desc_f' >Selbstwahrnehmung des Patienten zum Allgemeinzustand:</div>
@@ -163,6 +165,8 @@ require_once MIQ_ROOT . "/modules/form_base/form_start.php";
                         <select required id='FF_20560' name='FF_20560'  onchange='follow_select(this)'><option value=''></option><option value='verschlechtert' <?php if (($form_data_a[20560] ?? '') == 'verschlechtert') echo 'selected'; ?>>verschlechtert</option><option value='gleichbleibend' <?php if (($form_data_a[20560] ?? '') == 'gleichbleibend') echo 'selected'; ?>>gleichbleibend</option><option value='gebessert' <?php if (($form_data_a[20560] ?? '') == 'gebessert') echo 'selected'; ?>>gebessert</option>
                         </select>
                     </div>
+				</div>
+			</div></div><!--block-->
 			</fieldset>
 			<fieldset id='FS_'><legend>Labor</legend>
 					
@@ -210,18 +214,18 @@ require_once MIQ_ROOT . "/modules/form_base/form_start.php";
 			</fieldset>
 			<fieldset id='FS_'><legend>Medikamentenanamnese</legend>
 					
-                    <div class='col_a' id='SH_200071_a'>
+                    <div class='col_a' id='SH_200070_a'>
                         <div class='desc_f' >Glukokortikoide  Prednison/Prednisolon/Budesonid?</div>
                     </div>
-                    <div class='col_b' id='SH_200071_b'  style='text-align:center'>
-                        <div id='cbm_200071'>
-                            <input data-rcb='200071' required class='sim_hide' type='text' id='FF_200071' name='FF_200071' value="<?php echo $form_data_a[200071] ?? ''; ?>"  onchange='follow_select(this)'>
-                            <label class='custom-checkbox-wrapper'><span id='CB_200071_Ja' class='custom-checkbox'></span> <span class='custom-checkbox-label'>Ja</span></label>
+                    <div class='col_b' id='SH_200070_b'  style='text-align:center'>
+                        <div id='cbm_200070'>
+                            <input data-rcb='200070' required class='sim_hide' type='text' id='FF_200070' name='FF_200070' value="<?php echo $form_data_a[200070] ?? ''; ?>"  onchange='follow_select(this)'>
+                            <label class='custom-checkbox-wrapper'><span id='CB_200070_Ja' class='custom-checkbox'></span> <span class='custom-checkbox-label'>Ja</span></label>
                             &nbsp;&nbsp;&nbsp;&nbsp;
-                            <label class='custom-checkbox-wrapper'><span id='CB_200071_Nein' class='custom-checkbox'></span> <span class='custom-checkbox-label'>Nein</span></label>
+                            <label class='custom-checkbox-wrapper'><span id='CB_200070_Nein' class='custom-checkbox'></span> <span class='custom-checkbox-label'>Nein</span></label>
                         </div>
                     </div>
-			<div class='col_100' ><div id='B_200071_Ja' class='block' style='display:none'>
+			<div class='col_100' ><div id='B_200070_Ja' class='block' style='display:none'>
 				<div class='row'>
 					
                     <div class='col_a' id='SH_200270_a'>
@@ -246,19 +250,19 @@ require_once MIQ_ROOT . "/modules/form_base/form_start.php";
                         </select>
                     </div>
 					
-                    <div class='col_a' id='SH_200372_a'>
+                    <div class='col_a' id='SH_200272_a'>
                         <div class='desc_f' style='padding-left:30px;'> ≥ 10 mg ≥ 3 Monate</div>
                     </div>
-                    <div class='col_b' id='SH_200372_b'>
-                        <select  id='FF_200372' name='FF_200372'  onchange='follow_select(this)'><option value=''></option><option value='Ja' <?php if (($form_data_a[200372] ?? '') == 'Ja') echo 'selected'; ?>>Ja</option><option value='Nein' <?php if (($form_data_a[200372] ?? '') == 'Nein') echo 'selected'; ?>>Nein</option><option value='Unbekannt' <?php if (($form_data_a[200372] ?? '') == 'Unbekannt') echo 'selected'; ?>>Unbekannt</option>
+                    <div class='col_b' id='SH_200272_b'>
+                        <select  id='FF_200272' name='FF_200272'  onchange='follow_select(this)'><option value=''></option><option value='Ja' <?php if (($form_data_a[200272] ?? '') == 'Ja') echo 'selected'; ?>>Ja</option><option value='Nein' <?php if (($form_data_a[200272] ?? '') == 'Nein') echo 'selected'; ?>>Nein</option><option value='Unbekannt' <?php if (($form_data_a[200272] ?? '') == 'Unbekannt') echo 'selected'; ?>>Unbekannt</option>
                         </select>
                     </div>
 					
-                    <div class='col_a' id='SH_200373_a'>
+                    <div class='col_a' id='SH_200273_a'>
                         <div class='desc_f' style='padding-left:30px;'> ≥ 5 mg ≥ 3 Monate </div>
                     </div>
-                    <div class='col_b' id='SH_200373_b'>
-                        <select  id='FF_200373' name='FF_200373'  onchange='follow_select(this)'><option value=''></option><option value='Ja' <?php if (($form_data_a[200373] ?? '') == 'Ja') echo 'selected'; ?>>Ja</option><option value='Nein' <?php if (($form_data_a[200373] ?? '') == 'Nein') echo 'selected'; ?>>Nein</option><option value='Unbekannt' <?php if (($form_data_a[200373] ?? '') == 'Unbekannt') echo 'selected'; ?>>Unbekannt</option>
+                    <div class='col_b' id='SH_200273_b'>
+                        <select  id='FF_200273' name='FF_200273'  onchange='follow_select(this)'><option value=''></option><option value='Ja' <?php if (($form_data_a[200273] ?? '') == 'Ja') echo 'selected'; ?>>Ja</option><option value='Nein' <?php if (($form_data_a[200273] ?? '') == 'Nein') echo 'selected'; ?>>Nein</option><option value='Unbekannt' <?php if (($form_data_a[200273] ?? '') == 'Unbekannt') echo 'selected'; ?>>Unbekannt</option>
                         </select>
                     </div>
 				</div>
@@ -288,11 +292,11 @@ require_once MIQ_ROOT . "/modules/form_base/form_start.php";
                         </select>
                     </div>
 					
-                    <div class='col_a' id='SH_200572_a'>
+                    <div class='col_a' id='SH_200472_a'>
                         <div class='desc_f' style='padding-left:30px;'> rektal ≥ 2 mg ≥ 3 Monate</div>
                     </div>
-                    <div class='col_b' id='SH_200572_b'>
-                        <select  id='FF_200572' name='FF_200572'  onchange='follow_select(this)'><option value=''></option><option value='Ja' <?php if (($form_data_a[200572] ?? '') == 'Ja') echo 'selected'; ?>>Ja</option><option value='Nein' <?php if (($form_data_a[200572] ?? '') == 'Nein') echo 'selected'; ?>>Nein</option><option value='Unbekannt' <?php if (($form_data_a[200572] ?? '') == 'Unbekannt') echo 'selected'; ?>>Unbekannt</option>
+                    <div class='col_b' id='SH_200472_b'>
+                        <select  id='FF_200472' name='FF_200472'  onchange='follow_select(this)'><option value=''></option><option value='Ja' <?php if (($form_data_a[200472] ?? '') == 'Ja') echo 'selected'; ?>>Ja</option><option value='Nein' <?php if (($form_data_a[200472] ?? '') == 'Nein') echo 'selected'; ?>>Nein</option><option value='Unbekannt' <?php if (($form_data_a[200472] ?? '') == 'Unbekannt') echo 'selected'; ?>>Unbekannt</option>
                         </select>
                     </div>
 				</div>
@@ -322,11 +326,11 @@ require_once MIQ_ROOT . "/modules/form_base/form_start.php";
                         </select>
                     </div>
 					
-                    <div class='col_a' id='SH_200772_a'>
+                    <div class='col_a' id='SH_200672_a'>
                         <div class='desc_f' style='padding-left:30px;'>  ≥ 1g ≥ 3 Monate</div>
                     </div>
-                    <div class='col_b' id='SH_200772_b'>
-                        <select  id='FF_200772' name='FF_200772'  onchange='follow_select(this)'><option value=''></option><option value='Ja' <?php if (($form_data_a[200772] ?? '') == 'Ja') echo 'selected'; ?>>Ja</option><option value='Nein' <?php if (($form_data_a[200772] ?? '') == 'Nein') echo 'selected'; ?>>Nein</option><option value='Unbekannt' <?php if (($form_data_a[200772] ?? '') == 'Unbekannt') echo 'selected'; ?>>Unbekannt</option>
+                    <div class='col_b' id='SH_200672_b'>
+                        <select  id='FF_200672' name='FF_200672'  onchange='follow_select(this)'><option value=''></option><option value='Ja' <?php if (($form_data_a[200672] ?? '') == 'Ja') echo 'selected'; ?>>Ja</option><option value='Nein' <?php if (($form_data_a[200672] ?? '') == 'Nein') echo 'selected'; ?>>Nein</option><option value='Unbekannt' <?php if (($form_data_a[200672] ?? '') == 'Unbekannt') echo 'selected'; ?>>Unbekannt</option>
                         </select>
                     </div>
 				</div>
@@ -620,13 +624,6 @@ require_once MIQ_ROOT . "/modules/form_base/form_start.php";
 				</div>
 			</div></div><!--block-->
 			</div></div><!--block-->
-					
-                    <div class='col_a ' id='SH_20210_a'>
-                        <div class='desc_f' >Wie viele Tage (ungefähr) waren Sie aufgrund der CU arbeitsunfähig im letzten Jahr?</div>
-                    </div>
-                    <div class='col_b ' id='SH_20210_b'>
-                        <input required type='number' id='FF_20210' name='FF_20210' value="<?php echo htmlspecialchars($form_data_a[20210] ?? ''); ?>" min='0' max='100' step='1' placeholder='Tage'>
-                    </div>
 					
                     <div class='col_a ' id='SH_20211_a'>
                         <div class='desc_f' >Wie viele Tage waren Sie im Krankenhaus stationär aufgenommen im letzten Jahr?</div>

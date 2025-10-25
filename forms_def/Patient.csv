@@ -71,7 +71,6 @@ id;type;name;options;required
         ;end_row;;
     ;stop_block;; 
     20100;select;Aktuelle Lebenssituation:;Berentung|Schüler/ Student/ Ausbildung/ FSJ/FÖJ|Hausfrau/-mann/ Mutterschutz/ Elternzeit|in bezahlter Arbeit (Vollzeit)|in bezahlter Arbeit (Teilzeit)|erwerbslos|Frührente|keine Angabe;required
-    20111;select;Höchster allgemeinbildender Schulabschluss:;noch keinen Schulabschluss|Schule beendet ohne Schulabschluss|Realschulabschluss/ mittlere Reife (neu: mittlerer Schulabschluss/ MSA)|Haupt-/ Volksschulabschluss (neu: erster allgemeinbildender Schulabschluss/ ESA)|POS (Polytechnische Oberschule) bzw. 10. Klasse|Fachhochschulreife/ Fachoberschule|Abitur, allgemeine oder fachgebundene Hochschulreife|Anderen Schulabschluss (z.B. im Ausland erworben)|keine Angabe;required
     102200;date_tc;Datum der Erstdiagnose|in Jahr (vierstellig);1960|this_year|true|false|Y(M)|de;required
     102300;date_tc;Erste Symptome Ihrer Erkrankung?|in Jahr (vierstellig);1960|this_year|true|false|Y(M)|de;required    
 ;stop_fieldset;;
