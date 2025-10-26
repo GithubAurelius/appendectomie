@@ -23,7 +23,7 @@ function get_weeks($db, $fcid_str)
 $pid = $form_data_a[$_SESSION['param']['pid']] ?? "";
 if (!$pid) $pid = $param_a['pid'];
 
-$week_a = [];
+$visite_week_a = [];
 if ($pid){
     $visit_a = get_visits($db, $pid); 
     if (count($visit_a) > 0) $visite_week_a = get_weeks($db, implode(',',$visit_a)); 
