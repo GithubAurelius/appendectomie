@@ -13,6 +13,34 @@ $_SESSION['param']['groesse'] = 97;     // comfort/ bei CEDUR semi essential
 $_SESSION['table_edit'] = 0;
 
 
+// KEEPALIVVE AND LOGGING
+$access_lifetime = 15 * 60; // 15 Minuten
+$refresh_lifetime = 2 * 24 * 60 * 60; // 2 Tage
+$_SESSION['access_token'] = hash('sha256', $_SESSION['m_uid'] . time());
+$_SESSION['access_expires'] = time() + $access_lifetime;
+$_SESSION['refresh_token'] = hash('sha256', $_SESSION['m_uid'] . time());
+$_SESSION['refresh_expires'] = time() + $refresh_lifetime;
+
+// Refresh-Token im sicheren HttpOnly-Cookie
+setcookie('refresh_token', $_SESSION['refresh_token'], [
+    'expires' => time() + $refresh_lifetime,
+    'path' => '/',
+    'secure' => true,   // nur bei HTTPS
+    'httponly' => true, // nicht aus JS zugreifbar
+    'samesite' => 'Lax'
+]);
+
+// header('Content-Type: application/json');
+// echo json_encode([
+//     'access_token' => $access_token,
+//     'expires_in' => $access_lifetime
+// ]);
+
+
+
+
+
+
 // Special navigations
 if (isset($_SESSION['rl']['plobonly']))
     header("Location: " . MIQ_PATH . "modules/miq_plob");

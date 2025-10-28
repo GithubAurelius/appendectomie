@@ -4,9 +4,8 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] != 1) header('Location: login.php');
-$_SESSION['update_intervall'] = 600000; // 60000 = 60 Sekunden
-$_SESSION['session_timeout'] = 72000; // 3600 = 1 Stunde
-$_SESSION['last_activity'] = time();
+
+
 
 $ini_path = $_SESSION['INI-PATH'] ?? "";
 if ($ini_path) require_once $ini_path;
@@ -51,40 +50,40 @@ require MIQ_ROOT_PHP . 'index_base.php';
     </nav>
 
     <?php if ($_SESSION['m_uid'] == 1): ?>
-    <div class="dashboard-wrapper">
-        <div class="dashboard-container">
+        <div class="dashboard-wrapper">
+            <div class="dashboard-container">
 
 
-            <div class="dashboard-grid">
-                <div class="dashboard-card">
-                    <h2 class="dashboard-card-title">Statistiken</h2>
-                    <p class="dashboard-card-text">Details zu Zahlen oder Kennzahlen.</p>
-                </div>
-
-                <div class="dashboard-card">
-                    <h2 class="dashboard-card-title">Letzte Aktivitäten</h2>
-                    <p class="dashboard-card-text">Log-Informationen oder Benutzeraktionen.</p>
-                </div>
-
-
-                <div class="dashboard-card">
-                    <h2 class="dashboard-card-title">User und System</h2>
-                    <p class="dashboard-card-text"><?php require_once MIQ_ROOT_PHP . 'sys_info.php'; ?></p>
-                </div>
-
-                <?php if ($_SESSION['uid'] == 1) { ?>
-                    <div class="dashboard-card" style="padding:5px;">
-                        <h2 class="dashboard-card-title">Session-Info</h2>
-                        <div style="color:silver;max-height: 200px; overflow: auto;scrollbar-color: #888 transparent; scrollbar-width: thin;">
-                            <p class="dashboard-card-text">
-                            <pre><?php print_r($_SESSION); ?></pre>
-                            </p>
-                        </div>
+                <div class="dashboard-grid">
+                    <div class="dashboard-card">
+                        <h2 class="dashboard-card-title">Statistiken</h2>
+                        <p class="dashboard-card-text">Details zu Zahlen oder Kennzahlen.</p>
                     </div>
-                <?php } ?>
+
+                    <div class="dashboard-card">
+                        <h2 class="dashboard-card-title">Letzte Aktivitäten</h2>
+                        <p class="dashboard-card-text">Log-Informationen oder Benutzeraktionen.</p>
+                    </div>
+
+
+                    <div class="dashboard-card">
+                        <h2 class="dashboard-card-title">User und System</h2>
+                        <p class="dashboard-card-text"><?php require_once MIQ_ROOT_PHP . 'sys_info.php'; ?></p>
+                    </div>
+
+                    <?php if ($_SESSION['uid'] == 1) { ?>
+                        <div class="dashboard-card" style="padding:5px;">
+                            <h2 class="dashboard-card-title">Session-Info</h2>
+                            <div style="color:silver;max-height: 200px; overflow: auto;scrollbar-color: #888 transparent; scrollbar-width: thin;">
+                                <p class="dashboard-card-text">
+                                <pre><?php print_r($_SESSION); ?></pre>
+                                </p>
+                            </div>
+                        </div>
+                    <?php } ?>
+                </div>
             </div>
         </div>
-    </div>
     <?php endif ?>
     <div class='fixed_logo_box'></div>
     <?php
@@ -95,6 +94,8 @@ require MIQ_ROOT_PHP . 'index_base.php';
         echo print_r($_SESSION);
         echo "</pre>";
     }
+
+    require_once 'session.php';
     ?>
     <script>
         document.querySelectorAll('li a').forEach(function(link) {
@@ -111,22 +112,7 @@ require MIQ_ROOT_PHP . 'index_base.php';
         eL_show_hide_menue();
         activate_menue();
 
-        setInterval(function() {
-            fetch('<?php echo MIQ_PATH ?>php/session_check.php')
-                // .then(response => response.json()) 
-                .then(data => {
-                    if (data['url'].includes("login")) {
-                        window.location.href = '<?php echo $_SESSION['WEBROOT'] . $_SESSION['PROJECT_PATH'] ?>login.php';
-                    }
-                    // console.log("Antwort von session_check:", data);
-                })
-                .catch(error => {
-                    console.error("Fehler bei Session-Check:", error);
-                });
-        }, <?php echo $_SESSION['update_intervall'] ?>);
-
-       
-       document.documentElement.style.cssText = `
+        document.documentElement.style.cssText = `
             background-color: white;
             background-image: url('images/appendektomie_back.jpg');
             background-position: 50% 50%;
@@ -137,7 +123,6 @@ require MIQ_ROOT_PHP . 'index_base.php';
             -moz-background-size: cover;
             -o-background-size: cover;
         `;
-
     </script>
 </body>
 
