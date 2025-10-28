@@ -12,7 +12,6 @@ $_SESSION['param']['groesse'] = 97;     // comfort/ bei CEDUR semi essential
 
 $_SESSION['table_edit'] = 0;
 
-
 // KEEPALIVVE AND LOGGING
 $access_lifetime = 15 * 60; // 15 Minuten
 $refresh_lifetime = 2 * 24 * 60 * 60; // 2 Tage
@@ -35,11 +34,6 @@ setcookie('refresh_token', $_SESSION['refresh_token'], [
 //     'access_token' => $access_token,
 //     'expires_in' => $access_lifetime
 // ]);
-
-
-
-
-
 
 // Special navigations
 if (isset($_SESSION['rl']['plobonly']))

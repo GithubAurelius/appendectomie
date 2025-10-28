@@ -2,18 +2,17 @@
 if (!isset($_SESSION)) session_start();
 // <?php echo $_SESSION['update_intervall'] 
 
-$i_am_in_folder = __DIR__;
-$i_am_in_forms = (substr_count($i_am_in_folder, 'forms') > 0);
 $pre_link = "";
-if ($i_am_in_forms) $pre_link = "../";
+$from = $FROM ?? "";
+if ($from == 'forms') $pre_link = "../";
 ?>
 <script>
     const show_console = 1;
-
-    const PING_INTERVAL = 20 * 1000; // 1 Minute
+    const PING_INTERVAL = 6 * 1000; // 1 Minute
     let accessToken = <?php echo json_encode($_SESSION['access_token'] ?? null); ?>;
     let expiresIn = <?php echo json_encode($_SESSION['access_expires'] ?? null); ?>;
 
+    console.log("%c🔄 Session acitive", "color:darkgreen;font-weight:bold;");
     if (show_console) {
         console.log("%c🔄 Session-Debug gestartet", "color:orange;font-weight:bold;");
         console.log("Aktuelles Access-Token:", accessToken);
@@ -24,9 +23,9 @@ if ($i_am_in_forms) $pre_link = "../";
     // ---------------------------------------------------------------------------
     // 🧩 1) Session-Ping
     // ---------------------------------------------------------------------------
-    async function update_user_log() {
+    async function update_user_log() {console.log('session_fetch_user_log.php');
         try {
-            const res = await fetch('session_fetch_user_log.php', {
+            const res = await fetch(<?php echo json_encode($pre_link)?> + 'session_fetch_user_log.php', {
                 method: 'POST'
             });
 
@@ -45,9 +44,8 @@ if ($i_am_in_forms) $pre_link = "../";
 
     async function pingSession() {
         if (show_console) console.log("%c[PING] --> /session_keepalive.php", "color:deepskyblue;");
-
         try {
-            const res = await fetch('session_keepalive.php', {
+            const res = await fetch(<?php echo json_encode($pre_link)?> + 'session_keepalive.php', {
                 method: 'GET',
                 headers: {
                     'Authorization': `Bearer ${accessToken}`
@@ -56,7 +54,7 @@ if ($i_am_in_forms) $pre_link = "../";
             });
 
             const data = await res.json();
-            console.log("%c[PING-Response]", "color:deepskyblue;", data);
+             if (show_console) console.log("%c[PING-Response]", "color:deepskyblue;", data);
 
             switch (data.status) {
                 case 'ok':
@@ -85,7 +83,7 @@ if ($i_am_in_forms) $pre_link = "../";
         if (show_console) console.log("%c[REFRESH] --> /session_token_refresh.php", "color:limegreen;");
 
         try {
-            const res = await fetch('session_token_refresh.php', {
+            const res = await fetch(<?php echo json_encode($pre_link)?> + 'session_token_refresh.php', {
                 credentials: 'same-origin'
             });
             const data = await res.json();

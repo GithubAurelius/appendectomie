@@ -5,8 +5,6 @@ ini_set('display_errors', 1);
 
 if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] != 1) header('Location: login.php');
 
-
-
 $ini_path = $_SESSION['INI-PATH'] ?? "";
 if ($ini_path) require_once $ini_path;
 else {

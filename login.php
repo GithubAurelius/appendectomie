@@ -38,9 +38,4 @@ require_once MIQ_ROOT_PHP . "login_base.php";
         <input type="text" id="username" name="username" required><br><br>
         <label for="password">Passwort:</label>
         <input type="password" id="password" name="password" required><br><br>
-        <button type="submit">Anmelden</button><br><br><?php echo $message ?>
-    </form>
-
-</body>
-
-</html>
+        <button type="submit">Anmelden</button><br

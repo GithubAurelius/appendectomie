@@ -1,6 +1,8 @@
 <?php
 // keepalive.php
 if (!isset($_SESSION)) session_start();
+
+# require_once $_SESSION['INI-PATH'];
 session_start();
 header('Content-Type: application/json');
 
