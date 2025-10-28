@@ -7,8 +7,8 @@ $from = $FROM ?? "";
 if ($from == 'forms') $pre_link = "../";
 ?>
 <script>
-    const show_console = 1;
-    const PING_INTERVAL = 6 * 1000; // 1 Minute
+    const show_console = 0;
+    const PING_INTERVAL = 120 * 1000; // 1 Minute
     let accessToken = <?php echo json_encode($_SESSION['access_token'] ?? null); ?>;
     let expiresIn = <?php echo json_encode($_SESSION['access_expires'] ?? null); ?>;
 
