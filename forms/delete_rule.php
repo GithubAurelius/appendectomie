@@ -52,13 +52,9 @@ function del_chain($db, $query_str ){
                 $stmt = $db->prepare($query_str_questionary);
                 if ($del_active) $stmt->execute();
             }
-            
-            
-            
-            
            
         }
-        echo str_replace("\n","<br>", $del_queries);
+        // echo str_replace("\n","<br>", $del_queries);
     
     } else {
         $del_queries .= $query_str;

@@ -55,7 +55,7 @@ $form_data_a[$_SESSION['param']['therapy']] = $param_a['therapy'];
 $praxis_id = $form_data_a[$_SESSION['param']['praxis_pid']] ?? "";
 $ext_fcid   = $form_data_a[$_SESSION['param']['ext_fcid']] ?? "";
 $sex = $form_data_a[$_SESSION['param']['geschlecht']] ?? ""; 
-$praxis_id = "&nbsp;&nbsp;&nbsp; <img height='16px' src='../images/patient.svg'> Pat.Nr.: ".$praxis_id;
+$praxis_id = "&nbsp;&nbsp;&nbsp; <img height='16px' src='../forms/images/patient.svg'> Pat.Nr.: ".$praxis_id;
 $praxis_id = $praxis_id ." (".$ext_fcid."), ".$sex;
 
 // header

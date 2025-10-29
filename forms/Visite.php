@@ -128,7 +128,7 @@ require_once MIQ_ROOT . "/modules/form_base/form_start.php";
                         <input data-fg='10005'  type='text' id='FF_100' name='FF_100' value="<?php echo htmlspecialchars($form_data_a[100] ?? ''); ?>" placeholder=''>
                     </div>
 				</div>
-			<fieldset id='FS_'><legend><img height='16px' src='../images/dataentry.svg'> Visite / Dokumentationen <?=$praxis_id?></legend>
+			<fieldset id='FS_'><legend><img height='16px' src='../forms/images/dataentry.svg'> Visite / Dokumentationen <?=$praxis_id?></legend>
 					
                     <div class='col_30' style='display: flex; flex-wrap: nowrap;white-space: nowrap;'>
                         <span id='SP_10005021' class='desc_f' >Visite</span>&nbsp;

@@ -112,7 +112,7 @@ require MIQ_ROOT_PHP . 'index_base.php';
 
         document.documentElement.style.cssText = `
             background-color: white;
-            background-image: url('images/appendektomie_back.jpg');
+            background-image: url('forms/images/appendektomie_back.jpg');
             background-position: 50% 50%;
             background-repeat: no-repeat;
             background-attachment: fixed;

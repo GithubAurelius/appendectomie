@@ -6,7 +6,7 @@ $serverIp = $_SERVER['SERVER_ADDR'] ?? gethostbyname(gethostname());
 if (preg_match('/^(127\.0\.0\.1|192\.168\.|10\.|172\.(1[6-9]|2[0-9]|3[0-1])\.)/', $serverIp)) 
     $dom_loc = "local";
 else
-    $dom_loc = "online";
+    $dom_loc = "miqdoc.de";
 
 
 $fcid   = $_REQUEST['fcid'] ?? 0;
@@ -18,7 +18,7 @@ if ($fcont) $fcont = trim($fcont);
 
 
 // $fid_backup_base = "C:/xampp/htdocs/cedur/patient_log/";
-$fid_backup_base = "/var/www/cedur." . $dom_loc . "/PLOG/";
+$fid_backup_base = "/var/www/appendectomie." . $dom_loc . "/temp/PLOG/";
 $today_path = date('Ymd');
 
 $fid_backup_path = $fid_backup_base.trim($today_path);
