@@ -126,11 +126,6 @@
 
 
 
-    // basic vars 
-    // const status = <?php echo json_encode($status) ?>;
-    // const pre_visite = <?php echo json_encode($pre_visite ?? "") ?>;
-    // const pre_data_json_str = <?php echo json_encode($pre_data_json ?? "") ?>;
-
     const postetd = <?php echo json_encode($posted) ?>;
     const pid = <?php echo json_encode($form_data_a[$_SESSION['param']['pid']]); ?>;
     const fcid = <?php echo json_encode($fcid); ?>;

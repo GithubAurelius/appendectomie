@@ -10,25 +10,11 @@ function get_visits($db, $pid)
     return $res_a;
 }
 
-function get_last_visite($visits_a, $fcid)
-{
-    $prev = 0;
-    $prevFound = false;
-    foreach ($visits_a as $v) {
-        if ($v == $fcid) {
-            $prevFound = true;
-            break;
-        }
-        $prev = $v; 
-    }
-    return $prev;
-}
-
 
 $helper = $_REQUEST['helper'] ?? ($_POST['helper'] ?? "");
 
 $posted = 0; // javascript den Zustand mitteilen
-if ($_SERVER['REQUEST_METHOD'] === 'POST') $posted = 1; 
+if ($_SERVER['REQUEST_METHOD'] === 'POST') $posted = 1;
 
 // $user_is_patient = 0;
 // $param_from_session_a = $_SESSION['temp_params_a'] ?? [];
@@ -36,8 +22,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') $posted = 1;
 //     $param_a = $_SESSION['temp_params_a'];
 //     $user_is_patient = 1;
 // }
-    
- 
+
+
 // echo "<pre>"; echo print_r($param_a); echo "</pre>"; 
 $message_ready = 0;
 if (!isset($form_data_a[$_SESSION['param']['pid']]) || $form_data_a[$_SESSION['param']['pid']] == '') {
@@ -55,23 +41,7 @@ if (!isset($form_data_a[$_SESSION['param']['pid']]) || $form_data_a[$_SESSION['p
     // echo "<pre>"; echo print_r($_SESSION['param']); echo "</pre>";
     $query_add = " AND fid IN (102600,102200,102300,102400,102500,104500,111200,111301,115500,106900,107100,107200,107400,107500,107700,107800,108000,108100,108300,108400,102805,102806,105000,105100,105200,105300,105400,105400,105500,105500,105600,105700,105800,105900,102800,103400,103000,103300,103100,103200,102815,106000,106500,106600,106700,106701,106300,106400,106100,106700,106701,108500,108700,108800,108900,109000,109100,109200,109300,109400,110100,109500,109700,109600,109800,109900,110000,103505,101902,101904,101906,101908,101910,102000)";
     $visits_a = get_visits($db, $form_data_a[$_SESSION['param']['pid']]);
-    $pre_visite = get_last_visite($visits_a, $form_data_a[$_SESSION['param']['visite']]);
-
-    if ($pre_visite) {
-        $pre_data_a =  get_form_data($db, $fg, $pre_visite, $query_add);
-        echo message_box();
-        $message_ready = 1;
-        // echo "<pre>"; echo print_r($pre_data_a); echo "</pre>";
-        foreach ($pre_data_a as $fid => $fcont) {
-            $form_data_a[$fid] = $pre_data_a[$fid];
-        }
-        $pre_data_json = json_encode($pre_data_a);
-        $status = 'FOLLOWUP_INIT';
-    }
-} else {
-    $visits_a = get_visits($db, $form_data_a[$_SESSION['param']['pid']]);
-    $pre_visite = get_last_visite($visits_a, $fcid);
-}
+} 
 // echo $status;
 
 $new_header = $form_data_a[$_SESSION['param']['praxis_pid']] ?? "";
