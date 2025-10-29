@@ -7,8 +7,9 @@ $from = $FROM ?? "";
 if ($from == 'forms') $pre_link = "../";
 ?>
 <script>
-    const show_console = 1;
-    const PING_INTERVAL = 60 * 1000; // 1 Minute
+    const ping_intervall = parseInt(<?php echo json_encode($_SESSION['PING_INTERVAL'] ?? 0) ?>);
+    const show_console = <?php echo json_encode($_SESSION['PING_SHOW'] ?? "")?>;
+    const PING_INTERVAL = ping_intervall * 1000; // 1 Minute
     let accessToken = <?php echo json_encode($_SESSION['access_token'] ?? null); ?>;
     let expiresIn = <?php echo json_encode($_SESSION['access_expires'] ?? null); ?>;
 
@@ -23,7 +24,7 @@ if ($from == 'forms') $pre_link = "../";
     // ---------------------------------------------------------------------------
     // 🧩 1) Session-Ping
     // ---------------------------------------------------------------------------
-    async function update_user_log() {console.log('session_fetch_user_log.php');
+    async function update_user_log() {
         try {
             const res = await fetch(<?php echo json_encode($pre_link)?> + 'session_fetch_user_log.php', {
                 method: 'POST'
@@ -109,7 +110,7 @@ if ($from == 'forms') $pre_link = "../";
     // 🧩 3) Sichtbare Cookies regelmäßig prüfen
     // ---------------------------------------------------------------------------
     function checkCookies() {
-        console.log("%c[Cookie-Check]", "color:gray;", document.cookie || "(keine Cookies sichtbar)");
+        if (show_console) console.log("%c[Cookie-Check]", "color:gray;", document.cookie || "(keine Cookies sichtbar)");
     }
 
     // ---------------------------------------------------------------------------
