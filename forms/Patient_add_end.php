@@ -208,7 +208,7 @@
         if (gr && gw && gr > 0) {
             const bmi_val = gw / (gr / 100 * gr / 100);
             bmi.value = Math.round(bmi_val);
-            console.log(bmi_val);
+            // console.log(bmi_val);
         } else return '';
     }
 
