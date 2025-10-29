@@ -177,7 +177,7 @@ id;type;name;options;required
 
 
 ;start_fieldset;Vorzeitiger Abbruch;;
-    207652;radio_cb;Es erfolgte ein vorzeitiger Abbruch?;required
+    207652;radio_cb;Es erfolgte ein vorzeitiger Abbruch?;;required
     ;start_block;Ja;207652;
         ;start_row;;
             207653;date_ab;Abbruchdatum;;required

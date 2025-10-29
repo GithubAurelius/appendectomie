@@ -691,7 +691,7 @@ require_once MIQ_ROOT . "/modules/form_base/form_start.php";
                     </div>
                     <div class='col_b' id='SH_207652_b'  style='text-align:center'>
                         <div id='cbm_207652'>
-                            <input data-rcb='207652'  class='sim_hide' type='text' id='FF_207652' name='FF_207652' value="<?php echo $form_data_a[207652] ?? ''; ?>"  onchange='follow_select(this)'>
+                            <input data-rcb='207652' required class='sim_hide' type='text' id='FF_207652' name='FF_207652' value="<?php echo $form_data_a[207652] ?? ''; ?>"  onchange='follow_select(this)'>
                             <label class='custom-checkbox-wrapper'><span id='CB_207652_Ja' class='custom-checkbox'></span> <span class='custom-checkbox-label'>Ja</span></label>
                             &nbsp;&nbsp;&nbsp;&nbsp;
                             <label class='custom-checkbox-wrapper'><span id='CB_207652_Nein' class='custom-checkbox'></span> <span class='custom-checkbox-label'>Nein</span></label>
