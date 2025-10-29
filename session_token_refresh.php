@@ -23,10 +23,10 @@ if (
 // Neues Access-Token erzeugen
 $new_token = bin2hex(random_bytes(32));
 $_SESSION['access_token'] = $new_token;
-$_SESSION['access_expires'] = time() + (15 * 60);
+$_SESSION['access_expires'] = time() + ($_SESSION['access_lifetime'] * 60);
 
 echo json_encode([
     'status' => 'refreshed',
     'access_token' => $new_token,
-    'expires_in' => 15 * 60
+    'expires_in' => $_SESSION['access_lifetime'] * 60
 ]);

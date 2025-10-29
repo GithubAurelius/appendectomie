@@ -13,8 +13,10 @@ $_SESSION['param']['groesse'] = 97;     // comfort/ bei CEDUR semi essential
 $_SESSION['table_edit'] = 0;
 
 // KEEPALIVVE AND LOGGING
-$access_lifetime = 15 * 60; // 15 Minuten
-$refresh_lifetime = 2 * 24 * 60 * 60; // 2 Tage
+$_SESSION['access_lifetime'] = 90; // 90 Minuten
+$_SESSION['refresh_lifetime'] = 2; // 2 Tage
+$access_lifetime = $_SESSION['access_lifetime'] * 60; 
+$refresh_lifetime = $_SESSION['refresh_lifetime'] * 24 * 60 * 60; 
 $_SESSION['access_token'] = hash('sha256', $_SESSION['m_uid'] . time());
 $_SESSION['access_expires'] = time() + $access_lifetime;
 $_SESSION['refresh_token'] = hash('sha256', $_SESSION['m_uid'] . time());

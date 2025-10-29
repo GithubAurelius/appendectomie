@@ -7,7 +7,7 @@ session_start();
 header('Content-Type: application/json');
 
 $now = time();
-$timeout = 15 * 60; // Access-Token Lebensdauer
+$timeout = $_SESSION['access_lifetime'] * 60; // Access-Token Lebensdauer
 
 // Kein Access-Token? => Fehler
 if (empty($_SESSION['access_token']) || empty($_SESSION['access_expires'])) {

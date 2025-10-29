@@ -12,7 +12,7 @@ else {
     exit;
 }
 check_path_change(__DIR__);
-require 'index_param.php';
+require '_param_index.php';
 
 if (!isset($_SESSION['rl'])) header('Location: login.php'); // AGAIN: if user get no rights, even on token-login
 require MIQ_ROOT_PHP . 'index_base.php';
