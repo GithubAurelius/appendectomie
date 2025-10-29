@@ -29,6 +29,6 @@ session_start()
 </head>
 <body>
   <!-- Src anpassen -->
-  <iframe class="fullscreen-iframe" src="<?php echo $_SESSION['WEBROOT'].$_SESSION['PROJECT_PATH']?>info/Patientenfragebogen.pdf" title="Vollbild-Iframe" allowfullscreen></iframe>
+  <iframe class="fullscreen-iframe" src="<?php echo $_SESSION['WEBROOT'].$_SESSION['PROJECT_PATH']?>/forms/info/Patientenfragebogen.pdf" title="Vollbild-Iframe" allowfullscreen></iframe>
 </body>
 </html>
