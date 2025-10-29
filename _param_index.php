@@ -13,7 +13,7 @@ $_SESSION['param']['groesse'] = 97;     // comfort/ bei CEDUR semi essential
 $_SESSION['table_edit'] = 0;
 
 // KEEPALIVVE AND LOGGING
-$_SESSION['PING_SHOW'] = 'SHOW';
+$_SESSION['PING_SHOW'] = '';
 $_SESSION['PING_INTERVAL'] = 180;
 $_SESSION['access_lifetime'] = 90; // 90 Minuten
 $_SESSION['refresh_lifetime'] = 2; // 2 Tage
