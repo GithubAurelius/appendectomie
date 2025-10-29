@@ -164,7 +164,7 @@ id;type;name;options;required
 
 
 ;start_fieldset;Adverse Events / Komplikatonen;;
-    203650;radio_cb;Liegen AE/SAE/ Komplikatonen vor?;required
+    203650;radio_cb;Liegen AE/SAE/ Komplikatonen vor?;;required
     ;start_block;Ja;203650;
         ;start_row;;
             203653;radio_cb;@10@➥ Wurde die SAE fristgemäß gemeldet?;
