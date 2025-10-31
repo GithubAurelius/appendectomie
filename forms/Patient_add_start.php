@@ -1,5 +1,9 @@
 <?php
-$_SESSION['center'] = "DEMO-Zentrum";
+
+if ($_SESSION['user_group'] > 90) $_SESSION['center'] = "DEMO-Zentrum";
+else if ($_SESSION['user_group'] == 1) $_SESSION['center'] = "MDZ Köln";
+else if ($_SESSION['user_group'] == 2) $_SESSION['center'] = "EVKK";
+else $_SESSION['center'] = "MD";
 
 function check_if_valexists($db, $fg, $fid, $val)
 {
